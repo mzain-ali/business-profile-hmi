@@ -31,10 +31,10 @@ export const about = {
   eyebrow: "Who we are",
   headline: "Oman\u2019s aftermarket parts specialist for heavy machinery",
   paragraphs: [
-    "Hassan Mushtaq International SPC (HMI Parts) supplies quality-checked aftermarket spare parts for forklifts, excavators, wheel loaders, backhoes, telehandlers, cranes, tractors and road rollers \u2014 sourced from trusted manufacturers, not gray-market stock.",
-    "We\u2019re JSRS registered, giving contractors, fleet managers and procurement teams a vettable supplier they can bring into formal purchasing processes. Two branches \u2014 Ghala (Muscat) and Salalah \u2014 carry live local inventory, so most parts move the same day.",
+    "HMI Parts supplies quality\u2011checked aftermarket spare parts for forklifts, excavators, wheel loaders, backhoes, telehandlers, cranes, tractors and road rollers \u2014 sourced from trusted manufacturers, not gray\u2011market stock.",
+    "We operate two branches, Muscat and Salalah, with live local inventory for same\u2011day parts availability.",
   ],
-  photo: { src: "/assets/interior-reception.jpg", tag: "Ghala, Muscat" },
+  photo: { src: "/assets/about/interior.jpg", caption: "Parts showroom — Muscat" },
   stats: [
     { num: "2", label: "Branches across Oman" },
     { num: "30+", label: "Brands stocked" },
