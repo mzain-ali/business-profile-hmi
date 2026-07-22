@@ -6,9 +6,35 @@ import { BackgroundBlueprintSVG } from "./SparePartsSVGs";
 import shapes from "./shapes.module.css";
 import styles from "./CoverPage.module.css";
 
+const TwoToneTechnicalConnector = () => (
+  <svg width="48" height="24" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.connector}>
+    {/* Center lines/grid */}
+    <line x1="0" y1="12" x2="48" y2="12" stroke="var(--line)" strokeWidth="0.8" strokeDasharray="2 2" />
+    <line x1="12" y1="0" x2="12" y2="24" stroke="var(--line)" strokeWidth="0.8" strokeDasharray="2 2" />
+    <line x1="36" y1="0" x2="36" y2="24" stroke="var(--line)" strokeWidth="0.8" strokeDasharray="2 2" />
+    
+    {/* Left element: Navy Circle/Gear */}
+    <circle cx="12" cy="12" r="8" stroke="var(--navy)" strokeWidth="1" />
+    <circle cx="12" cy="12" r="5" stroke="var(--navy)" strokeWidth="0.8" strokeDasharray="2 1" />
+    <circle cx="12" cy="12" r="2" fill="var(--navy)" />
+    
+    {/* Right element: Orange/Yellow Hex/Nut */}
+    <path d="M 36 6 L 41.2 9 L 41.2 15 L 36 18 L 30.8 15 L 30.8 9 Z" stroke="var(--orange-deep)" strokeWidth="1" />
+    <circle cx="36" cy="12" r="3.5" stroke="var(--orange-deep)" strokeWidth="0.8" />
+    <circle cx="36" cy="12" r="1" fill="var(--orange-deep)" />
+
+    {/* Connecting line */}
+    <line x1="20" y1="12" x2="28" y2="12" stroke="var(--ink)" strokeWidth="1.2" />
+  </svg>
+);
+
 export default function CoverPage() {
   return (
     <PageShell showCornerMark={false} className={styles.cover}>
+      {/* Background Technical Watermark (Navy/Blue) */}
+      <div className={styles.bgWatermark}>
+        <BackgroundBlueprintSVG color="var(--navy)" strokeWidth={0.8} />
+      </div>
 
       {/* Top Right Shape with Yellow Spare Parts Blueprint Texture Image */}
       <div className={styles.shapeHex}>
@@ -76,12 +102,17 @@ export default function CoverPage() {
         </div>
 
         {/* 3. Footer Contact Information */}
-        <div className={styles.contactRow}>
-          {cover.contact.map((c) => (
-            <span key={c.label}>
-              <strong>{c.label}</strong> &nbsp;{c.value}
-            </span>
-          ))}
+        <div className={styles.contactContainer}>
+          <div className={styles.connectorWrapper}>
+            <TwoToneTechnicalConnector />
+          </div>
+          <div className={styles.contactRow}>
+            {cover.contact.map((c) => (
+              <span key={c.label}>
+                <strong>{c.label}</strong> &nbsp;{c.value}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </PageShell>

@@ -12,6 +12,24 @@ type PageShellProps = {
   className?: string;
 };
 
+function LeftTechnicalBorder({ dark }: { dark: boolean }) {
+  return (
+    <div className={styles.leftBorderContainer}>
+      <div className={styles.borderLineNavy} />
+      <div className={styles.borderLineOrange} />
+      <div className={styles.tickContainer}>
+        {Array.from({ length: 30 }).map((_, i) => (
+          <span
+            key={i}
+            className={`${styles.tick} ${i % 2 === 0 ? styles.tickNavy : styles.tickOrange}`}
+            style={{ top: `${(i * 3.33).toFixed(2)}%` }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function PageShell({
   children,
   dark = false,
@@ -22,6 +40,7 @@ export default function PageShell({
 }: PageShellProps) {
   return (
     <section className={`${styles.page} ${dark ? styles.dark : ""} ${className}`}>
+      <LeftTechnicalBorder dark={dark} />
       {children}
       {showCornerMark && <span className={styles.cornerMark} />}
       {pageNumber != null && (

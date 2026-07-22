@@ -9,6 +9,18 @@
 }
 
 
+/* Background Technical Watermark (Navy/Blue) */
+.bgWatermark {
+  position: absolute;
+  top: 0.3in;
+  left: 0.3in;
+  width: 6.8in;
+  height: 4.8in;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* Top Right Shape matching yellow/gold accent color (#D98812 / var(--orange-deep)) */
 .shapeHex {
   position: absolute;
@@ -131,6 +143,18 @@
 }
 
 /* 3. Footer Contact Information */
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+.connectorWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
 .contactRow {
   display: flex;
   gap: 34px;

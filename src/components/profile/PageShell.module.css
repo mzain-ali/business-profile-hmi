@@ -33,3 +33,59 @@
 }
 .pageNum b { color: var(--ink); }
 .dark .pageNum, .dark .pageNum b { color: rgba(250, 250, 248, 0.6); }
+
+/* Left Technical Border System */
+.leftBorderContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 14px;
+  display: flex;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.borderLineNavy {
+  width: 2px;
+  height: 100%;
+  background: var(--navy);
+  opacity: 0.25;
+}
+
+.borderLineOrange {
+  width: 2px;
+  height: 100%;
+  background: var(--orange);
+  opacity: 0.35;
+}
+
+.tickContainer {
+  position: absolute;
+  top: 0;
+  left: 4px;
+  bottom: 0;
+  right: 0;
+}
+
+.tick {
+  position: absolute;
+  left: 0;
+  width: 6px;
+  height: 1px;
+  opacity: 0.35;
+}
+
+.tickNavy {
+  background: var(--navy);
+}
+
+.tickOrange {
+  background: var(--orange);
+}
+
+.dark .borderLineNavy { opacity: 0.45; }
+.dark .borderLineOrange { opacity: 0.55; }
+.dark .tickNavy { background: #8ec3eb; opacity: 0.55; }
+.dark .tickOrange { background: var(--orange); opacity: 0.55; }
+
