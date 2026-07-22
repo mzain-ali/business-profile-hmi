@@ -1,0 +1,12 @@
+.headline { font-size: 25pt; font-weight: 600; margin-top: 10px; }
+.sub { margin-top: 11px; color: var(--body); font-size: 11pt; max-width: 6.3in; }
+
+.chartCard { margin-top: 0.4in; border: 1px solid var(--line); padding: 0.35in 0.4in 0.3in; }
+.chart { display: flex; flex-direction: column; gap: 13px; }
+.barRow { display: flex; align-items: center; gap: 14px; }
+.barLabel { width: 1.6in; font-size: 10pt; font-weight: 500; text-align: right; }
+.barTrack { flex: 1; height: 0.28in; background: #F3F1EC; position: relative; }
+.barFill { height: 100%; }
+.barValue { width: 0.55in; font-size: 9pt; color: var(--muted); }
+
+.note { margin-top: 0.3in; font-size: 9pt; color: var(--muted); max-width: 6.5in; }

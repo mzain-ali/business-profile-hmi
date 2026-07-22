@@ -1,0 +1,9 @@
+/* print.css — applied only for the PDF export route via @page + print media. */
+@page {
+  size: 13.333in 7.5in;
+  margin: 0;
+}
+
+@media print {
+  body { background: none; padding: 0; }
+}

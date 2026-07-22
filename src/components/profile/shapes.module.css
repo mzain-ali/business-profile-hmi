@@ -1,0 +1,64 @@
+/* shapes.module.css — the shared shape language: chamfered corners, icon
+   boxes, badges, eyebrows. Imported by every page component so the visual
+   system stays identical across the whole document. */
+
+.chamferLg { clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 26px, 100% 100%, 0 100%); }
+.chamferMd { clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%); }
+.chamferSm { clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 0 100%); }
+
+.diamond {
+  width: 7px;
+  height: 7px;
+  background: var(--orange-deep);
+  transform: rotate(45deg);
+  display: inline-block;
+  margin-right: 9px;
+  border-radius: 1px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  font-size: 10.5pt;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px 7px 12px;
+  background: var(--navy-soft);
+  color: var(--navy);
+  font-size: 9.5pt;
+  font-weight: 600;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+}
+.badgeAlt { background: var(--orange-soft); color: var(--orange-deep); }
+
+.btnLike {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--orange);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 10.5pt;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+}
+
+.iconBox {
+  width: 0.46in;
+  height: 0.46in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--orange-soft);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  flex-shrink: 0;
+}
+.iconBoxNavy { background: var(--navy-soft); }

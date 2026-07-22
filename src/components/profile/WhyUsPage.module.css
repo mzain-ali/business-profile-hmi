@@ -1,0 +1,11 @@
+.headWrap { max-width: 6in; margin-top: 0.28in; }
+.headWrap h2 { font-size: 25pt; font-weight: 600; margin-top: 10px; }
+.sub { margin-top: 11px; color: var(--body); font-size: 11pt; }
+
+.cards { margin-top: 0.42in; display: flex; flex-wrap: wrap; gap: 0.26in; }
+.card {
+  width: 5.42in; background: #FFFFFF; border: 1px solid var(--line);
+  padding: 0.28in; display: flex; gap: 16px;
+}
+.card h3 { font-size: 13pt; font-weight: 600; }
+.card p { margin-top: 7px; font-size: 10pt; color: var(--body); line-height: 1.5; }

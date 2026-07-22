@@ -1,0 +1,12 @@
+.headline { font-size: 25pt; font-weight: 600; margin-top: 10px; }
+.sub { margin-top: 11px; color: var(--body); font-size: 11pt; max-width: 6in; }
+
+.row { margin-top: 0.5in; display: flex; gap: 0.3in; }
+.card {
+  flex: 1; background: #FFFFFF; border: 1px solid var(--line);
+  border-bottom: 3px solid var(--orange);
+  padding: 0.3in; height: 3in;
+}
+.iconBox { width: 0.55in; height: 0.55in; }
+.card h3 { font-size: 14pt; font-weight: 600; margin-top: 18px; }
+.card p { margin-top: 10px; font-size: 10pt; color: var(--body); line-height: 1.55; }
