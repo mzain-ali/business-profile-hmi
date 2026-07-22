@@ -102,3 +102,28 @@
   margin-top: 4px;
 }
 
+.machineStrip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.3in;
+  padding-top: 0.15in;
+  border-top: 1px dashed rgba(20, 102, 158, 0.2);
+}
+
+.machineItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.machineTexture {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  opacity: 0.95;
+  filter: contrast(1.15) brightness(0.95);
+}
+

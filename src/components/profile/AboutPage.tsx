@@ -30,6 +30,17 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+          {/* Machinery texture motif row for static PDF export */}
+          {about.machineTypes && (
+            <div className={styles.machineStrip}>
+              {about.machineTypes.map((m) => (
+                <div key={m.id} className={styles.machineItem}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={m.img} alt={m.label} className={styles.machineTexture} />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         <div className={styles.photoContainer}>
           <div className={styles.photoWrapper}>

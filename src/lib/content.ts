@@ -40,6 +40,14 @@ export const about = {
     { num: "30+", label: "Brands stocked" },
     { num: "8+", label: "Machine categories" },
   ],
+  machineTypes: [
+    { id: "forklift", label: "Forklift", img: "/assets/machines/forklift.png" },
+    { id: "loader", label: "Wheel Loader", img: "/assets/machines/loader.png" },
+    { id: "backhoe", label: "Backhoe", img: "/assets/machines/backhoe.png" },
+    { id: "roller", label: "Road Roller", img: "/assets/machines/roller.png" },
+    { id: "crane", label: "Crane", img: "/assets/machines/crane.png" },
+    { id: "excavator", label: "Excavator", img: "/assets/machines/excavator.png" },
+  ],
 };
 
 export const whyUs = {
