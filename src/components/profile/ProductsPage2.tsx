@@ -1,14 +1,14 @@
-// ProductsPage.tsx — page 5. Content: lib/content.ts → productsPage1
+// ProductsPage2.tsx — page 6. Content: lib/content.ts → productsPage2
 import PageShell from "./PageShell";
 import { Icon } from "./Icons";
-import { productsPage1 } from "@/lib/content";
+import { productsPage2 } from "@/lib/content";
 import { HeavyIndustrialGearSVG } from "./SparePartsSVGs";
 import shapes from "./shapes.module.css";
 import styles from "./ProductsPage.module.css";
 
-export default function ProductsPage() {
+export default function ProductsPage2() {
   return (
-    <PageShell pageNumber={5}>
+    <PageShell pageNumber={6}>
       {/* Top right gear watermark matching visual system */}
       <div className={styles.topRightWheel}>
         <HeavyIndustrialGearSVG color="var(--navy)" />
@@ -16,21 +16,21 @@ export default function ProductsPage() {
 
       <span className={shapes.eyebrow}>
         <span className={shapes.diamond} />
-        {productsPage1.eyebrow}
+        {productsPage2.eyebrow}
       </span>
-      <h2 className={styles.headline}>{productsPage1.headline}</h2>
-      <p className={styles.sub}>{productsPage1.sub}</p>
+      <h2 className={styles.headline}>{productsPage2.headline}</h2>
+      <p className={styles.sub}>{productsPage2.sub}</p>
 
       <div className={styles.row}>
-        {productsPage1.items.map((p, i) => (
+        {productsPage2.items.map((p, i) => (
           <div
             className={`${styles.card} ${shapes.chamferLg}`}
             key={p.title}
-            style={{ borderBottomColor: i % 2 === 0 ? "var(--orange)" : "var(--navy)" }}
+            style={{ borderBottomColor: i % 2 === 0 ? "var(--navy)" : "var(--orange)" }}
           >
             <div className={`${styles.imageFrame} ${shapes.chamferLg}`}>
               <div className={styles.iconBadge}>
-                <Icon name="nut" size={14} color={i % 2 === 0 ? "var(--orange-deep)" : "var(--navy)"} />
+                <Icon name="nut" size={14} color={i % 2 === 0 ? "var(--navy)" : "var(--orange-deep)"} />
               </div>
               <img src={p.img} alt={p.title} className={styles.cardPhoto} />
             </div>

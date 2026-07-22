@@ -100,38 +100,27 @@ export const services = {
   ],
 };
 
-export const products = {
+export const productsPage1 = {
   eyebrow: "Product categories",
   headline: "Every category. One shop.",
-  sub: "The machine categories we stock parts for \u2014 message us your part number directly on WhatsApp.",
+  sub: "The machine categories we stock parts for — message us your part number directly on WhatsApp.",
   items: [
-    { title: "Forklift Parts", body: "Hydraulic, mast & drivetrain components for Toyota, Mitsubishi, Hyster, Yale, Doosan, Heli." },
-    { title: "Excavator Parts", body: "Undercarriage, hydraulic and engine components for Komatsu, Hitachi, CAT and Volvo." },
-    { title: "Wheel Loader Parts", body: "Axle, transmission and hydraulic parts for JCB, SDLG, XCMG and Zoomlion." },
-    { title: "Backhoe Parts", body: "Volvo and CAT backhoe components \u2014 buckets, boom seals, axle assemblies." },
-    { title: "Telehandler Parts", body: "Boom, hydraulic and drivetrain parts for Manitou and JCB telehandlers." },
-    { title: "Front Road Roller Parts", body: "Drum, vibration and drivetrain components for Bomag, Dynapac and Hamm." },
-    { title: "Crane Parts", body: "Hydraulic and structural components for mobile crane fleets." },
-    { title: "Tractor Parts", body: "Axle, transmission and hydraulic parts for John Deere, Massey Ferguson, New Holland." },
+    { title: "Forklift Parts", img: "/assets/products/forklift-spare-parts-xray-image-min.png", body: "Hydraulic, mast & drivetrain components for Toyota, Mitsubishi, Hyster, Yale, Doosan, Heli." },
+    { title: "Excavator Parts", img: "/assets/products/excavator.png", body: "Undercarriage, hydraulic and engine components for Komatsu, Hitachi, CAT and Volvo." },
+    { title: "Wheel Loader Parts", img: "/assets/products/wheel-loader-parts-xray-image-min.png", body: "Axle, transmission and hydraulic parts for JCB, SDLG, XCMG and Zoomlion." },
+    { title: "Backhoe Parts", img: "/assets/products/backhoe-spare-parts-xray-image-min.png", body: "Volvo and CAT backhoe components — buckets, boom seals, axle assemblies." },
   ],
 };
 
-// Illustrative stock-depth figures for the coverage chart.
-// ← replace with real per-category SKU / stock-line counts before circulation.
-export const coverage = {
-  eyebrow: "Stock coverage",
-  headline: "Where our inventory runs deepest",
-  sub: "Relative stock-line depth by machine category across our Muscat and Salalah branches. Figures shown are illustrative \u2014 ask us for live availability on your part.",
-  note: "Stock-line figures are illustrative placeholders. Replace with real per-category SKU counts before this document goes into circulation.",
-  bars: [
-    { label: "Forklift", value: 420 },
-    { label: "Backhoe", value: 310 },
-    { label: "Wheel Loader", value: 280 },
-    { label: "Excavator", value: 260 },
-    { label: "Telehandler", value: 190 },
-    { label: "Tractor", value: 170 },
-    { label: "Crane", value: 120 },
-    { label: "Road Roller", value: 110 },
+export const productsPage2 = {
+  eyebrow: "Product categories",
+  headline: "Extended Machinery Lineup",
+  sub: "Additional heavy equipment categories stocked across our Muscat and Salalah branches.",
+  items: [
+    { title: "Telehandler Parts", img: "/assets/products/telehandler.png", body: "Boom, hydraulic and drivetrain parts for Manitou and JCB telehandlers." },
+    { title: "Front Road Roller Parts", img: "/assets/products/road-roller.png", body: "Drum, vibration and drivetrain components for Bomag, Dynapac and Hamm." },
+    { title: "Crane Parts", img: "/assets/products/crane.png", body: "Hydraulic and structural components for mobile crane fleets." },
+    { title: "Tractor Parts", img: "/assets/products/tractor.png", body: "Axle, transmission and hydraulic parts for John Deere, Massey Ferguson, New Holland." },
   ],
 };
 
@@ -205,5 +194,5 @@ export const contact = {
 // Master page order — the print route (app/print/page.tsx) maps over this.
 export const pageOrder = [
   "cover", "about", "whyUs", "services", "products",
-  "coverage", "brands", "locations", "faq", "contact",
+  "products2", "brands", "locations", "faq", "contact",
 ] as const;

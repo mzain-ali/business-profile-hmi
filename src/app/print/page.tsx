@@ -8,7 +8,7 @@ import AboutPage from "@/components/profile/AboutPage";
 import WhyUsPage from "@/components/profile/WhyUsPage";
 import ServicesPage from "@/components/profile/ServicesPage";
 import ProductsPage from "@/components/profile/ProductsPage";
-import CoveragePage from "@/components/profile/CoveragePage";
+import ProductsPage2 from "@/components/profile/ProductsPage2";
 import BrandsPage from "@/components/profile/BrandsPage";
 import LocationsPage from "@/components/profile/LocationsPage";
 import FaqPage from "@/components/profile/FaqPage";
@@ -23,7 +23,7 @@ export default function PrintPage() {
       <WhyUsPage />
       <ServicesPage />
       <ProductsPage />
-      <CoveragePage />
+      <ProductsPage2 />
       <BrandsPage />
       <LocationsPage />
       <FaqPage />
