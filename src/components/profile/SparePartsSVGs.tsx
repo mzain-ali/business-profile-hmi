@@ -241,3 +241,82 @@ export function BackgroundBlueprintSVG({ className, color = "currentColor", stro
     </svg>
   );
 }
+
+// 5. Single Technical Gear Blueprint SVG
+export function SingleGearSVG({ className, color = "currentColor", strokeWidth = 1.2 }: SVGProps) {
+  const angles = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330];
+  return (
+    <svg className={className} viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+        {/* Outer Ring & Pitch Circles */}
+        <circle cx="150" cy="150" r="115" />
+        <circle cx="150" cy="150" r="95" strokeDasharray="5 3" opacity="0.75" />
+        <circle cx="150" cy="150" r="75" />
+        <circle cx="150" cy="150" r="42" />
+        <circle cx="150" cy="150" r="24" />
+        
+        {/* Center Keyway Shaft Hole */}
+        <rect x="144" y="122" width="12" height="12" />
+        
+        {/* Lightening Windows / Spokes */}
+        {[0, 60, 120, 180, 240, 300].map((a) => (
+          <g key={a} transform={`rotate(${a} 150 150)`}>
+            <path d="M 150 95 A 55 55 0 0 1 185 115 L 172 128 A 38 38 0 0 0 150 114 Z" opacity="0.85" />
+          </g>
+        ))}
+
+        {/* 12 Outer Gear Teeth */}
+        {angles.map((angle) => (
+          <g key={angle} transform={`rotate(${angle} 150 150)`}>
+            <path d="M 138 35 L 142 20 L 158 20 L 162 35 Z" />
+          </g>
+        ))}
+
+        {/* Center Crosshair Technical Pitch Lines */}
+        <line x1="10" y1="150" x2="290" y2="150" strokeDasharray="6 4" opacity="0.4" />
+        <line x1="150" y1="10" x2="150" y2="290" strokeDasharray="6 4" opacity="0.4" />
+      </g>
+    </svg>
+  );
+}
+
+// 6. Heavy Industrial Mechanical Gear SVG (Sharp, solid mechanical gear)
+export function HeavyIndustrialGearSVG({ className, color = "currentColor" }: { className?: string; color?: string }) {
+  const teethAngles = [0, 36, 72, 108, 144, 180, 216, 252, 288, 324];
+  return (
+    <svg className={className} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Gear Main Outer Solid Ring */}
+      <circle cx="100" cy="100" r="74" fill={color} />
+      {/* Inner Shaft Bore Cutout */}
+      <circle cx="100" cy="100" r="32" fill="var(--bg, #FAFBFD)" />
+
+      {/* 10 Solid Square Mechanical Gear Teeth */}
+      {teethAngles.map((angle) => (
+        <rect
+          key={angle}
+          x="88"
+          y="8"
+          width="24"
+          height="28"
+          fill={color}
+          transform={`rotate(${angle} 100 100)`}
+        />
+      ))}
+
+      {/* Center Keyway Slot */}
+      <rect x="94" y="60" width="12" height="12" fill="var(--bg, #FAFBFD)" />
+
+      {/* 5 Mechanical Lightening Holes */}
+      {[0, 72, 144, 216, 288].map((angle) => (
+        <circle
+          key={angle}
+          cx="100"
+          cy="52"
+          r="9"
+          fill="var(--bg, #FAFBFD)"
+          transform={`rotate(${angle} 100 100)`}
+        />
+      ))}
+    </svg>
+  );
+}
