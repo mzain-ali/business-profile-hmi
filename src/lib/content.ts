@@ -17,8 +17,8 @@ export const cover = {
   headline: { plain: "Heavy Equipment", accentTail: "Spare Parts", accent: ", Ready Now." },
   sub: "Quality aftermarket spare parts for forklifts, excavators, wheel loaders, backhoes, telehandlers, cranes, tractors and road rollers — stocked across Muscat and Salalah, Oman.",
   badges: [
-    { icon: "badge" as const, label: "JSRS Registered Supplier" },
-    { icon: "pin" as const, label: "2 Branches — Muscat & Salalah" },
+    { icon: "gear" as const, label: "30+ Brands Stocked", accent: "navy" as const },
+    { icon: "pin" as const, label: "2 Branches — Muscat & Salalah", accent: "orange" as const },
   ],
   contact: [
     { label: "Web", value: "www.hmi-parts.com" },

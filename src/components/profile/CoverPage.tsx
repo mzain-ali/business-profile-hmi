@@ -9,10 +9,6 @@ import styles from "./CoverPage.module.css";
 export default function CoverPage() {
   return (
     <PageShell showCornerMark={false} className={styles.cover}>
-      {/* Background Technical Watermark */}
-      <div className={styles.bgWatermark}>
-        <BackgroundBlueprintSVG color="#1A1A1A" strokeWidth={0.8} />
-      </div>
 
       {/* Top Right Shape with Yellow Spare Parts Blueprint Texture Image */}
       <div className={styles.shapeHex}>
@@ -35,7 +31,6 @@ export default function CoverPage() {
       </div>
 
       <div className={styles.dotgrid} />
-      <div className={styles.shapeRing} />
 
       {/* Main Profile Layout — Highly Organized Hierarchy */}
       <div className={styles.contentColumn}>
@@ -71,9 +66,9 @@ export default function CoverPage() {
 
           {/* Key Badges */}
           <div className={styles.badgeRow}>
-            {cover.badges.map((b, i) => (
-              <span key={b.label} className={`${shapes.badge} ${i === 1 ? shapes.badgeAlt : ""}`}>
-                <Icon name={b.icon} size={13} color={i === 1 ? "#D98812" : "#14669E"} />
+            {cover.badges.map((b) => (
+              <span key={b.label} className={`${shapes.badge} ${b.accent === "orange" ? shapes.badgeAlt : ""}`}>
+                <Icon name={b.icon} size={13} color={b.accent === "orange" ? "#D98812" : "#14669E"} />
                 {b.label}
               </span>
             ))}
