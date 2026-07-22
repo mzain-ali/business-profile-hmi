@@ -55,10 +55,19 @@ export const whyUs = {
   headline: "Built for people who can\u2019t afford downtime",
   sub: "Contractors, fleet managers and workshop owners choose HMI Parts for four reasons.",
   cards: [
-    { icon: "pin" as const, accent: "orange" as const, title: "Two branches, one stock you can rely on", body: "Ghala (Muscat) and Salalah both hold live inventory \u2014 not a single warehouse hours away. Most local parts move same day." },
-    { icon: "shield" as const, accent: "navy" as const, title: "Aftermarket, without the guesswork", body: "Quality-checked aftermarket parts from trusted manufacturers \u2014 not gray-market stock. The right fit, at a fair price, from a supplier who stands behind it." },
-    { icon: "bolt" as const, accent: "orange" as const, title: "Parts and uptime services, in one place", body: "Battery regeneration and on-site glass fitting sit alongside our parts supply \u2014 most parts-only competitors can\u2019t offer either." },
-    { icon: "badge" as const, accent: "navy" as const, title: "JSRS registered, procurement-ready", body: "Registered on Oman\u2019s Joint Supplier Registration System \u2014 already vettable for contractor, logistics and industrial procurement." },
+    { icon: "pin" as const, accent: "orange" as const, title: "Two branches, live stock", body: "Ghala (Muscat) and Salalah both hold live inventory \u2014 not a single warehouse hours away. Most local parts move same day." },
+    { icon: "shield" as const, accent: "navy" as const, title: "Quality aftermarket parts", body: "Quality-checked aftermarket parts from trusted manufacturers \u2014 not gray-market stock. The right fit at a fair price." },
+    { icon: "bolt" as const, accent: "orange" as const, title: "Battery & glass services", body: "Battery regeneration for electric forklifts and on-site glass fitting alongside parts supply \u2014 cutting machine downtime." },
+    { icon: "gear" as const, accent: "navy" as const, title: "Direct sourcing network", body: "Sourced directly from trusted global component manufacturers \u2014 ensuring fair pricing, warranty support, and long-term reliability." },
+  ],
+  photo: {
+    src: "/assets/interior-shelves.jpg",
+    caption: "Organized inventory & parts counter support",
+  },
+  audience: [
+    { id: "contractor", label: "Contractors" },
+    { id: "fleet", label: "Fleet Managers" },
+    { id: "workshop", label: "Workshop Owners" },
   ],
 };
 

@@ -1,11 +1,155 @@
-.headWrap { max-width: 6in; margin-top: 0.28in; }
-.headWrap h2 { font-size: 25pt; font-weight: 600; margin-top: 10px; }
-.sub { margin-top: 11px; color: var(--body); font-size: 11pt; }
-
-.cards { margin-top: 0.42in; display: flex; flex-wrap: wrap; gap: 0.26in; }
-.card {
-  width: 5.42in; background: #FFFFFF; border: 1px solid var(--line);
-  padding: 0.28in; display: flex; gap: 16px;
+.grid {
+  display: flex;
+  gap: 0.55in;
+  margin-top: 0.28in;
+  position: relative;
+  z-index: 1;
 }
-.card h3 { font-size: 13pt; font-weight: 600; }
-.card p { margin-top: 7px; font-size: 10pt; color: var(--body); line-height: 1.5; }
+
+.bgWatermark {
+  position: absolute;
+  right: 0.1in;
+  bottom: 0.2in;
+  width: 4.6in;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.leftCol {
+  flex: 1.15;
+}
+
+.headWrap {
+  max-width: 6.2in;
+}
+
+.headWrap h2 {
+  font-size: 25pt;
+  font-weight: 600;
+  margin-top: 8px;
+  line-height: 1.18;
+}
+
+.sub {
+  margin-top: 10px;
+  color: var(--body);
+  font-size: 11pt;
+  line-height: 1.5;
+}
+
+.cardsGrid {
+  margin-top: 0.35in;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.22in;
+}
+
+.card {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--orange);
+  padding: 0.22in 0.2in;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.cardText {
+  flex: 1;
+}
+
+.card h3 {
+  font-size: 12.5pt;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.card p {
+  margin-top: 6px;
+  font-size: 9.8pt;
+  color: var(--body);
+  line-height: 1.45;
+}
+
+.rightCol {
+  flex: 0.85;
+  display: flex;
+  flex-direction: column;
+}
+
+.photoWrapper {
+  width: 100%;
+  height: 3.4in;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.photoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photoCaption {
+  margin-top: 6px;
+  font-size: 8.5pt;
+  font-weight: 500;
+  color: var(--body);
+  letter-spacing: 0.02em;
+  text-align: right;
+  opacity: 0.8;
+}
+
+.audienceSection {
+  margin-top: 0.28in;
+  padding-top: 0.18in;
+  border-top: 1px solid var(--line);
+}
+
+.audienceTitle {
+  font-size: 8.5pt;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.audienceStrip {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.audienceItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.audienceIconBox {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy-soft);
+  clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 0 100%);
+}
+
+.audienceLabel {
+  font-size: 8pt;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
