@@ -2,11 +2,12 @@
 import PageShell from "./PageShell";
 import { about } from "@/lib/content";
 import { GearsAndBearingsSVG } from "./SparePartsSVGs";
+import { Icon } from "./Icons";
 import shapes from "./shapes.module.css";
 import styles from "./AboutPage.module.css";
 
 export default function AboutPage() {
-  const statIcons = ['/icons/pin.svg', '/icons/tag.svg', '/icons/grid.svg'];
+  const statIcons = ["/icons/pin.svg", "/icons/tag.svg", "/icons/grid.svg"];
   return (
     <PageShell pageNumber={2}>
       {/* Low-opacity technical blueprint watermark matching Cover Page visual system */}
@@ -14,29 +15,54 @@ export default function AboutPage() {
         <GearsAndBearingsSVG color="var(--navy)" strokeWidth={0.8} />
       </div>
 
-      <span className={shapes.eyebrow}><span className={shapes.diamond} />{about.eyebrow}</span>
+      <span className={shapes.eyebrow}>
+        <span className={shapes.diamond} />
+        {about.eyebrow}
+      </span>
       <div className={styles.grid}>
         <div className={styles.copy}>
           <h2>{about.headline}</h2>
           {about.paragraphs.map((p) => (
-            <p className={styles.lead} key={p.slice(0, 20)}>{p}</p>
+            <p className={styles.lead} key={p.slice(0, 20)}>
+              {p}
+            </p>
           ))}
           <div className={styles.statsRow}>
             {about.stats.map((s, i) => (
-              <div className={styles.stat} key={s.label} style={{ borderTopColor: i % 2 ? "var(--navy)" : "var(--orange)" }}>
+              <div
+                className={styles.stat}
+                key={s.label}
+                style={{
+                  borderTopColor: i % 2 ? "var(--navy)" : "var(--orange)",
+                }}
+              >
                 <img src={statIcons[i]} alt="" className={styles.icon} />
                 <div className={styles.num}>{s.num}</div>
                 <div className={styles.lbl}>{s.label}</div>
               </div>
             ))}
           </div>
-          {/* Machinery texture motif row for static PDF export */}
+          {/* 8 Machine Categories Row with Chamfered Cards & Alternating Accent Rhythm */}
           {about.machineTypes && (
             <div className={styles.machineStrip}>
-              {about.machineTypes.map((m) => (
-                <div key={m.id} className={styles.machineItem}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={m.img} alt={m.label} className={styles.machineTexture} />
+              {about.machineTypes.map((m, i) => (
+                <div
+                  key={m.id}
+                  className={styles.machineCard}
+                  style={{
+                    borderTopColor:
+                      i % 2 === 0 ? "var(--orange)" : "var(--navy)",
+                  }}
+                >
+                  <div className={styles.machineBox}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={m.img}
+                      alt={m.label}
+                      className={styles.machineTexture}
+                    />
+                  </div>
+                  <span className={styles.machineLabel}>{m.label}</span>
                 </div>
               ))}
             </div>
@@ -45,11 +71,21 @@ export default function AboutPage() {
         <div className={styles.photoContainer}>
           <div className={styles.photoWrapper}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={about.photo.src} alt="HMI Parts showroom" className={styles.photoImg} />
+            <img
+              src={about.photo.src}
+              alt="HMI Parts showroom"
+              className={styles.photoImg}
+            />
           </div>
-          {about.photo.caption && (
-            <div className={styles.photoCaption}>{about.photo.caption}</div>
-          )}
+          <div className={styles.photoMetaRow}>
+            {about.photo.caption && (
+              <div className={styles.photoCaption}>{about.photo.caption}</div>
+            )}
+            <div className={`${shapes.badge} ${styles.rightBadge}`}>
+              <Icon name="pin" size={12} color="var(--navy)" />
+              Live Local Inventory · Muscat &amp; Salalah
+            </div>
+          </div>
         </div>
       </div>
     </PageShell>
