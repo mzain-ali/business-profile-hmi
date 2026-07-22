@@ -180,14 +180,18 @@ export const locations = {
       address: "Al Amkeen Building, Shop #7, Way #5258, Building #1/4521, Ghala Saniya Street, Ghala Industrial Area, Muscat, Oman",
       phone: "+968 7733 0777",
       email: "hassan.mushtaq@hmi-parts.com",
+      hours: "Sat – Thu: 8:00 AM – 1:00 PM, 4:00 PM – 8:00 PM",
+      mapUrl: "https://maps.google.com/?q=Ghala+Industrial+Area+Muscat+Oman",
     },
     {
       name: "Salalah Branch",
-      photo: "/assets/interior-shelves.jpg", // ← replace with a real Salalah storefront photo
-      pin: "Salalah",
-      address: "Salalah, Oman",
+      photo: "/assets/interior-shelves.jpg",
+      pin: "Salalah Industrial Area",
+      address: "Building #12/B, Shop #3, Al Sanaiya Street, Industrial Area, Salalah, Dhofar Governorate, Oman",
       phone: "+968 9701 8824",
       email: "hassan.mushtaq@hmi-parts.com",
+      hours: "Sat – Thu: 8:00 AM – 1:00 PM, 4:00 PM – 8:00 PM",
+      mapUrl: "https://maps.google.com/?q=Industrial+Area+Salalah+Oman",
     },
   ],
 };
