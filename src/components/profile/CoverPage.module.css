@@ -9,16 +9,17 @@
 }
 
 
-/* Background Technical Watermark (Navy/Blue) */
+/* Background Technical Watermark (Navy/Blue) — Sits cleanly behind logo only */
 .bgWatermark {
   position: absolute;
-  top: 0.3in;
+  top: 0.2in;
   left: 0.3in;
-  width: 6.8in;
-  height: 4.8in;
-  opacity: 0.05;
+  width: 5.4in;
+  height: 1.5in;
+  opacity: 0.06;
   pointer-events: none;
   z-index: 0;
+  overflow: hidden;
 }
 
 /* Top Right Shape matching yellow/gold accent color (#D98812 / var(--orange-deep)) */
@@ -58,6 +59,10 @@
   pointer-events: none;
 }
 
+.shapeCircleImg {
+  transform: scale(1.35);
+  transform-origin: center center;
+}
 
 .dotgrid {
   position: absolute;
@@ -143,18 +148,6 @@
 }
 
 /* 3. Footer Contact Information */
-.contactContainer {
-  display: flex;
-  flex-direction: column;
-  margin-top: 24px;
-}
-
-.connectorWrapper {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 8px;
-}
-
 .contactRow {
   display: flex;
   gap: 34px;
