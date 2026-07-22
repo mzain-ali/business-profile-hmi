@@ -74,11 +74,29 @@ export const whyUs = {
 export const services = {
   eyebrow: "What we do",
   headline: "Parts supply and uptime services, in one place",
-  sub: "Beyond stocking spare parts, we help keep machines running with two services most parts-only suppliers don\u2019t offer.",
+  sub: "Our core business is spare parts supply — alongside that, we offer two services most parts-only suppliers don't.",
   items: [
-    { icon: "gear" as const, accent: "orange" as const, title: "Spare Parts Supply", body: "Aftermarket parts for forklifts, excavators, wheel loaders, telehandlers, backhoes, cranes, tractors and road rollers \u2014 axles, transmissions, engines, hydraulics and more." },
-    { icon: "bolt" as const, accent: "navy" as const, title: "Battery Regeneration", body: "Battery regeneration and maintenance services for electric forklifts \u2014 extending battery life and cutting replacement costs." },
-    { icon: "shield" as const, accent: "orange" as const, title: "On-Site Glass Fixing", body: "Windscreen repair and replacement for construction, agriculture and industrial machinery \u2014 maintaining visibility and operator safety." },
+    {
+      img: "/assets/services/parts-supply.jpeg",
+      fallbackImg: "/assets/interior-shelves.jpg",
+      accent: "orange" as const,
+      title: "Spare Parts Supply",
+      body: "Aftermarket spare parts for forklifts, excavators, wheel loaders, telehandlers, backhoes, cranes, tractors & road rollers — axles, transmissions, hydraulics and engine components.",
+    },
+    {
+      img: "/assets/services/battery-regeneration.jpeg",
+      fallbackImg: "/assets/whyUs/parts-counter.jpg",
+      accent: "navy" as const,
+      title: "Battery Regeneration",
+      body: "Battery regeneration and maintenance services for electric forklifts — extending battery life and cutting replacement costs.",
+    },
+    {
+      img: "/assets/services/glass-fixing.jpeg",
+      fallbackImg: "/assets/about/interior.jpg",
+      accent: "orange" as const,
+      title: "On-Site Glass Fixing",
+      body: "Windscreen repair and replacement for construction, agriculture and industrial machinery — maintaining visibility and operator safety.",
+    },
   ],
 };
 
