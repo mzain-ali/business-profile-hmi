@@ -1,12 +1,18 @@
 // ServicesPage.tsx — page 4. Content: lib/content.ts → services
 import PageShell from "./PageShell";
 import { services } from "@/lib/content";
+import { GearsAndBearingsSVG } from "./SparePartsSVGs";
 import shapes from "./shapes.module.css";
 import styles from "./ServicesPage.module.css";
 
 export default function ServicesPage() {
   return (
     <PageShell pageNumber={4}>
+      {/* Top right gear/wheel watermark icon */}
+      <div className={styles.topRightWheel}>
+        <GearsAndBearingsSVG color="var(--navy)" strokeWidth={0.8} />
+      </div>
+
       <span className={shapes.eyebrow}>
         <span className={shapes.diamond} />
         {services.eyebrow}
