@@ -1,7 +1,7 @@
 // scripts/generate-pdf.mjs — exports the /print route to a pixel-accurate
 // landscape PDF using Playwright (real Chromium, full CSS support).
 import { chromium } from "playwright";
-import { spawn } from "node:child_process";
+import { spawn, execSync } from "node:child_process";
 import http from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -17,7 +17,7 @@ async function isUrlHealthy(url) {
   });
 }
 
-async function waitForServer(url, timeoutMs = 20000) {
+async function waitForServer(url, timeoutMs = 25000) {
   const start = Date.now();
   while (Date.now() - start < timeoutMs) {
     if (await isUrlHealthy(url)) return true;
@@ -32,15 +32,21 @@ async function main() {
 
   const is3000Healthy = await isUrlHealthy(targetUrl);
   if (!is3000Healthy) {
-    console.log("Port 3000 is unavailable or returning error. Starting production server on port 3005...");
-    targetUrl = "http://localhost:3005/print";
-    spawnedServer = spawn("npx", ["next", "start", "-p", "3005"], {
+    console.log("Port 3000 is unavailable or returning error. Building & starting production server on port 3005...");
+    const nextBin = path.join(__dirname, "..", "node_modules", "next", "dist", "bin", "next");
+
+    execSync(`"${process.execPath}" "${nextBin}" build`, {
       cwd: path.join(__dirname, ".."),
-      shell: true,
       stdio: "ignore",
     });
 
-    const ready = await waitForServer(targetUrl, 20000);
+    targetUrl = "http://localhost:3005/print";
+    spawnedServer = spawn(process.execPath, [nextBin, "start", "-p", "3005"], {
+      cwd: path.join(__dirname, ".."),
+      stdio: "ignore",
+    });
+
+    const ready = await waitForServer(targetUrl, 25000);
     if (!ready) {
       if (spawnedServer) spawnedServer.kill();
       throw new Error("Could not start production server on port 3005.");

@@ -43,7 +43,7 @@
   width: 3.1in;
   height: 3.1in;
   border-radius: 50%;
-  background: var(--navy);
+  /* background: var(--navy); */
   z-index: 1;
   overflow: hidden;
 }
@@ -60,7 +60,7 @@
 }
 
 .shapeCircleImg {
-  transform: scale(1.35);
+  transform: scale(1.7);
   transform-origin: center center;
 }
 
