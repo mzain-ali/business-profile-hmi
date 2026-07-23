@@ -248,15 +248,19 @@ export const faq = {
 export const contact = {
   eyebrow: "Get in touch",
   headline: "Need a part today?",
-  sub: "Message us your machine and part details \u2014 Muscat or Salalah, we\u2019ll confirm stock and price fast.",
+  sub: "Message us your machine and part details — Muscat or Salalah, we’ll confirm stock and price fast.",
+  qrCard: {
+    title: "Scan to Chat on WhatsApp",
+    sub: "+968 7733 0777 · Instant Parts Enquiry",
+  },
   cols: [
-    { label: "WhatsApp / Phone", value: "+968 7733 0777" },
-    { label: "Salalah Branch", value: "+968 9701 8824" },
-    { label: "Email", value: "hassan.mushtaq@hmi-parts.com" },
-    { label: "Website", value: "www.hmi-parts.com" },
+    { icon: "phone" as const, accent: "orange" as const, label: "WhatsApp / Phone", value: "+968 7733 0777" },
+    { icon: "pin" as const, accent: "navy" as const, label: "Salalah Branch", value: "+968 9701 8824" },
+    { icon: "envelope" as const, accent: "orange" as const, label: "Email", value: "hassan.mushtaq@hmi-parts.com" },
+    { icon: "globe" as const, accent: "navy" as const, label: "Website", value: "www.hmi-parts.com" },
   ],
-  ctaLabel: "Chat on WhatsApp",
-  footer: "Hassan Mushtaq International SPC \u00b7 JSRS Registered Supplier",
+  ctaLabel: "Chat on WhatsApp (+968 7733 0777)",
+  footer: "Hassan Mushtaq International SPC · Two branches. Same-day stock. 30+ brands.",
 };
 
 // Master page order — the print route (app/print/page.tsx) maps over this.

@@ -1,18 +1,211 @@
-.contact { display: flex; flex-direction: column; justify-content: space-between; }
-
-.shapeHexOut {
-  position: absolute; top: -2in; right: -2in; width: 6in; height: 6in;
-  border: 1.5px solid rgba(250, 250, 248, 0.08);
-  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
 }
 
-.headline { font-size: 33pt; font-weight: 700; color: var(--bg); margin-top: 14px; max-width: 7in; }
-.sub { margin-top: 15px; font-size: 12pt; color: rgba(250, 250, 248, 0.68); max-width: 6.3in; }
+.shapeHexOut {
+  position: absolute;
+  top: -2in;
+  right: -2in;
+  width: 6in;
+  height: 6in;
+  border: 1.5px solid rgba(250, 250, 248, 0.08);
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  pointer-events: none;
+}
 
-.grid { display: flex; gap: 0.6in; margin-top: 0.45in; position: relative; z-index: 2; }
-.col { flex: 1; border-left: 2px solid var(--orange); padding-left: 14px; }
-.lbl { font-size: 9pt; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(250, 250, 248, 0.5); }
-.val { margin-top: 7px; font-size: 12pt; font-weight: 600; }
+/* Background blueprint watermark overlay for closing bookend */
+.bgWatermark {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7.5in;
+  height: 7.5in;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
 
-.cta { display: flex; align-items: center; gap: 20px; margin-top: 0.5in; position: relative; z-index: 2; }
-.footerLine { color: rgba(250, 250, 248, 0.6); font-size: 10.5pt; }
+.top {
+  position: relative;
+  z-index: 2;
+}
+
+.headline {
+  font-size: 33pt;
+  font-weight: 700;
+  color: var(--bg);
+  margin-top: 12px;
+  max-width: 7in;
+  letter-spacing: -0.01em;
+}
+
+.sub {
+  margin-top: 10px;
+  font-size: 11.5pt;
+  color: rgba(250, 250, 248, 0.75);
+  max-width: 6.3in;
+  line-height: 1.5;
+}
+
+/* Center Visual Section: QR Code Card */
+.centerVisual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.25in 0;
+  position: relative;
+  z-index: 2;
+}
+
+.qrCard {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 4px solid var(--orange);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.qrBox {
+  padding: 6px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.qrImg {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
+}
+
+.qrInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.qrTitle {
+  font-size: 13.5pt;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.qrSub {
+  font-size: 9.8pt;
+  color: var(--orange);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.qrDesc {
+  font-size: 9pt;
+  color: rgba(250, 250, 248, 0.65);
+  margin-top: 4px;
+  max-width: 3.2in;
+  line-height: 1.4;
+}
+
+/* Contact Info 4-Column Row */
+.bottomSection {
+  position: relative;
+  z-index: 2;
+}
+
+.grid {
+  display: flex;
+  gap: 0.35in;
+  margin-bottom: 0.28in;
+}
+
+.col {
+  flex: 1;
+  border-left: 2px solid var(--orange);
+  padding-left: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.colNavy {
+  border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+.colHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.colIconBox {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(217, 136, 18, 0.18);
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%);
+  flex-shrink: 0;
+}
+
+.colIconBoxNavy {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.lbl {
+  font-size: 8.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(250, 250, 248, 0.55);
+  font-weight: 600;
+}
+
+.val {
+  font-size: 10.8pt;
+  font-weight: 600;
+  color: #FFFFFF;
+  word-break: break-word;
+}
+
+/* Prominent Hero CTA Banner & Footer */
+.ctaArea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 0.18in;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.heroBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  background: var(--orange);
+  color: #1A1A1A;
+  font-weight: 700;
+  font-size: 11pt;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 15px rgba(217, 136, 18, 0.3);
+}
+
+.footerLine {
+  color: rgba(250, 250, 248, 0.65);
+  font-size: 9.8pt;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
