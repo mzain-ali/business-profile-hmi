@@ -44,8 +44,10 @@ export const about = {
     { id: "forklift", label: "Forklift", img: "/assets/machines/forklift.png" },
     { id: "loader", label: "Wheel Loader", img: "/assets/machines/loader.png" },
     { id: "backhoe", label: "Backhoe", img: "/assets/machines/backhoe.png" },
+    { id: "telehandler", label: "Telehandler", img: "/assets/machines/telehandler.png" },
     { id: "roller", label: "Road Roller", img: "/assets/machines/roller.png" },
     { id: "crane", label: "Crane", img: "/assets/machines/crane.png" },
+    { id: "tractor", label: "Tractor", img: "/assets/machines/tractor.png" },
     { id: "excavator", label: "Excavator", img: "/assets/machines/excavator.png" },
   ],
 };
