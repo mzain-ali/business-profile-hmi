@@ -2,39 +2,21 @@
 import PageShell from "./PageShell";
 import { Icon } from "./Icons";
 import { cover, site } from "@/lib/content";
-import { BackgroundBlueprintSVG } from "./SparePartsSVGs";
 import shapes from "./shapes.module.css";
 import styles from "./CoverPage.module.css";
 
 export default function CoverPage() {
   return (
     <PageShell showCornerMark={false} className={styles.cover}>
-      {/* Background Technical Watermark (Navy/Blue) */}
-      <div className={styles.bgWatermark}>
-        <BackgroundBlueprintSVG color="var(--navy)" strokeWidth={0.8} />
-      </div>
-
-      {/* Top Right Shape with Yellow Spare Parts Blueprint Texture Image */}
-      <div className={styles.shapeHex}>
+      {/* Background Cover Image */}
+      <div className={styles.bgImageWrapper}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/spare-parts-bg.png"
-          alt="Spare parts yellow blueprint texture"
-          className={styles.shapeBgImg}
+          src="/assets/cover/cover-background.jpeg"
+          alt="Cover background"
+          className={styles.bgImage}
         />
       </div>
-
-      {/* Bottom Right Shape with Navy Spare Parts Blueprint Texture Image */}
-      <div className={styles.shapeCircle}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/assets/spare-parts-navy.png"
-          alt="Spare parts navy blueprint texture"
-          className={`${styles.shapeBgImg} ${styles.shapeCircleImg}`}
-        />
-      </div>
-
-      <div className={styles.dotgrid} />
 
       {/* Main Profile Layout — Highly Organized Hierarchy */}
       <div className={styles.contentColumn}>

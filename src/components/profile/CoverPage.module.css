@@ -9,71 +9,23 @@
 }
 
 
-/* Background Technical Watermark (Navy/Blue) — Sits cleanly behind logo only */
-.bgWatermark {
-  position: absolute;
-  top: 0.2in;
-  left: 0.3in;
-  width: 5.4in;
-  height: 1.5in;
-  opacity: 0.06;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-/* Top Right Shape matching yellow/gold accent color (#D98812 / var(--orange-deep)) */
-.shapeHex {
-  position: absolute;
-  top: -1.1in;
-  right: -1.1in;
-  width: 4.6in;
-  height: 4.6in;
-  background: var(--orange-deep);
-  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-  opacity: 0.96;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.shapeCircle {
-  position: absolute;
-  bottom: -1.3in;
-  right: 1.1in;
-  width: 3.1in;
-  height: 3.1in;
-  border-radius: 50%;
-  /* background: var(--navy); */
-  z-index: 1;
-  overflow: hidden;
-}
-
-.shapeBgImg {
+.bgImageWrapper {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0.95;
+  z-index: 0;
   pointer-events: none;
 }
 
-.shapeCircleImg {
-  transform: scale(1.7);
-  transform-origin: center center;
-}
-
-.dotgrid {
-  position: absolute;
-  top: 0.6in;
-  right: 3.4in;
-  width: 1.6in;
-  height: 1.6in;
-  background-image: radial-gradient(rgba(20, 20, 18, 0.18) 1.4px, transparent 1.4px);
-  background-size: 13px 13px;
-  opacity: 0.5;
-  z-index: 1;
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
 }
 
 /* Main Structured Content Column */
@@ -83,6 +35,7 @@
   justify-content: space-between;
   height: 100%;
   max-width: 7.2in;
+  position: relative;
   z-index: 2;
 }
 
@@ -90,12 +43,17 @@
 .logoRow {
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 20;
 }
 
 .logo {
   height: 0.9in;
   max-width: 4.2in;
   object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 30;
 }
 
 /* 2. Main Title Block */
