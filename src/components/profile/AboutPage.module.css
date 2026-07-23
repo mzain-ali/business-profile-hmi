@@ -1,53 +1,149 @@
-.grid {
-  display: flex;
-  gap: 0.55in;
-  margin-top: 0.32in;
+.aboutShell {
   position: relative;
-  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.bgWatermark {
+.bgImageWrapper {
   position: absolute;
-  right: -0.4in;
-  bottom: -0.2in;
-  width: 5.2in;
-  opacity: 0.06;
-  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
+  pointer-events: none;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+}
+
+.contentLayout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 0.4in);
+  position: relative;
+  z-index: 10;
+  margin-top: 0.08in;
+}
+
+.eyebrowRow {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.eyebrowCard {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  position: relative;
+  z-index: 25;
+}
+
+.grid {
+  display: flex;
+  gap: 0.45in;
 }
 
 .copy {
   flex: 1.15;
+  position: relative;
+  z-index: 2;
 }
 
 .grid h2 {
-  font-size: 26pt;
-  font-weight: 600;
-  margin-top: 10px;
+  font-size: 25pt;
+  font-weight: 700;
+  margin-top: 4px;
   line-height: 1.15;
-}
-
-.lead {
-  margin-top: 15px;
-  font-size: 11.5pt;
-  color: var(--body);
-  line-height: 1.6;
+  color: var(--ink);
   max-width: 5.6in;
 }
 
+.lead {
+  margin-top: 12px;
+  font-size: 11pt;
+  color: #475569;
+  line-height: 1.55;
+  max-width: 5.5in;
+}
+
+/* Square Stats Row with 20px Rounded Corners */
+.statsRow {
+  display: flex;
+  gap: 0.22in;
+  margin-top: 0.24in;
+}
+
+.statHex {
+  flex: 1;
+  max-width: 1.45in;
+  height: 1.45in;
+  background: #ffffff;
+  border: 1.8px solid #d98812;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.statInner {
+  text-align: center;
+  padding: 6px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 auto 2px;
+  display: block;
+}
+
+.num {
+  font-family: var(--font-display);
+  font-size: 22pt;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.lbl {
+  font-size: 8.5pt;
+  color: var(--body);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* Photo Container & Clean Rectangular Image */
 .photoContainer {
   flex: 0.85;
   display: flex;
   flex-direction: column;
   position: relative;
+  z-index: 2;
 }
 
 .photoWrapper {
   width: 100%;
-  height: 4.8in;
-  border-radius: 2px;
+  height: 4.1in;
+  border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  position: relative;
 }
 
 .photoImg {
@@ -57,93 +153,38 @@
   display: block;
 }
 
-.photoMetaRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 8px;
-}
-
-.photoCaption {
-  font-size: 8.5pt;
-  font-weight: 500;
-  color: var(--body);
-  letter-spacing: 0.03em;
-  opacity: 0.8;
-}
-
-.rightBadge {
-  font-size: 8pt;
-  padding: 4px 10px;
-  background: var(--navy-soft);
-  color: var(--navy);
-}
-
-.statsRow {
-  display: flex;
-  gap: 0.3in;
-  margin-top: 0.35in;
-}
-
-.stat {
-  flex: 1;
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--orange);
-  padding: 0.18in 0.2in;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.icon {
-  width: 24px;
-  height: 24px;
-  margin: 0 auto 4px;
-  display: block;
-}
-
-.num {
-  font-family: var(--font-display);
-  font-size: 26pt;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.lbl {
-  font-size: 9.5pt;
-  color: var(--body);
-  margin-top: 4px;
-}
-
+/* All 8 Machine Categories in Single Horizontal Row with 25px Gap */
 .machineStrip {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 0.08in;
-  margin-top: 0.24in;
-  padding-top: 0.16in;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 25px;
+  margin-top: 0.18in;
+  padding-top: 0.15in;
   border-top: 1px solid var(--line);
+  width: 100%;
 }
 
-.machineCard {
+.circleMachineCard {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--orange);
-  background: rgba(255, 255, 255, 0.75);
-  padding: 3px 2px 4px;
-  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%);
   text-align: center;
-  overflow: hidden;
+  flex: none;
 }
 
-.machineBox {
-  width: 100%;
-  height: 52px;
+.circleBox {
+  width: 0.82in;
+  height: 0.82in;
+  border-radius: 50%;
+  border: 1.6px solid #14669e;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2px;
+  padding: 6px;
   box-sizing: border-box;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 .machineTexture {
@@ -151,20 +192,14 @@
   height: 100%;
   object-fit: contain;
   mix-blend-mode: multiply;
-  opacity: 0.95;
   filter: contrast(1.15) brightness(0.95);
 }
 
 .machineLabel {
-  font-size: 6.8pt;
+  font-size: 7.2pt;
   font-weight: 600;
   color: var(--ink);
-  letter-spacing: 0.01em;
-  margin-top: 2px;
+  margin-top: 4px;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-  padding: 0 2px;
 }
 
