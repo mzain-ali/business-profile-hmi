@@ -1,31 +1,72 @@
 // scripts/generate-pdf.mjs — exports the /print route to a pixel-accurate
 // landscape PDF using Playwright (real Chromium, full CSS support).
-//
-// Usage:
-//   1. npm run build && npm run start   (in one terminal, leave running)
-//   2. npm run pdf                      (in another terminal)
-//
-// Or run `node scripts/generate-pdf.mjs --dev` to hit a `next dev` server
-// on port 3000 instead (slower render, fine for quick checks).
-
 import { chromium } from "playwright";
+import { spawn } from "node:child_process";
+import http from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PORT = process.env.PORT || 3000;
-const URL = `http://localhost:${PORT}/print`;
 const OUT = path.join(__dirname, "..", "HMI-Parts-Business-Profile.pdf");
 
+async function isUrlHealthy(url) {
+  return new Promise((resolve) => {
+    http.get(url, (res) => {
+      resolve(res.statusCode === 200);
+    }).on("error", () => resolve(false));
+  });
+}
+
+async function waitForServer(url, timeoutMs = 20000) {
+  const start = Date.now();
+  while (Date.now() - start < timeoutMs) {
+    if (await isUrlHealthy(url)) return true;
+    await new Promise((r) => setTimeout(r, 500));
+  }
+  return false;
+}
+
 async function main() {
+  let targetUrl = `http://localhost:3000/print`;
+  let spawnedServer = null;
+
+  const is3000Healthy = await isUrlHealthy(targetUrl);
+  if (!is3000Healthy) {
+    console.log("Port 3000 is unavailable or returning error. Starting production server on port 3005...");
+    targetUrl = "http://localhost:3005/print";
+    spawnedServer = spawn("npx", ["next", "start", "-p", "3005"], {
+      cwd: path.join(__dirname, ".."),
+      shell: true,
+      stdio: "ignore",
+    });
+
+    const ready = await waitForServer(targetUrl, 20000);
+    if (!ready) {
+      if (spawnedServer) spawnedServer.kill();
+      throw new Error("Could not start production server on port 3005.");
+    }
+  }
+
+  console.log(`Navigating to ${targetUrl} ...`);
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
-  console.log(`Navigating to ${URL} ...`);
-  await page.goto(URL, { waitUntil: "networkidle" });
+  await page.goto(targetUrl, { waitUntil: "networkidle" });
 
-  // Make sure web fonts have actually painted before printing.
-  await page.evaluate(() => document.fonts.ready);
+  // Ensure all web fonts and images are fully loaded before rendering PDF
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+    const images = Array.from(document.querySelectorAll("img"));
+    await Promise.all(
+      images.map((img) => {
+        if (img.complete) return Promise.resolve();
+        return new Promise((resolve) => {
+          img.addEventListener("load", resolve, { once: true });
+          img.addEventListener("error", resolve, { once: true });
+        });
+      })
+    );
+  });
 
   await page.pdf({
     path: OUT,
@@ -36,7 +77,11 @@ async function main() {
   });
 
   await browser.close();
-  console.log(`Saved: ${OUT}`);
+  if (spawnedServer) {
+    spawnedServer.kill();
+  }
+
+  console.log(`Successfully exported 10-page PDF to: ${OUT}`);
 }
 
 main().catch((err) => {

@@ -4,10 +4,16 @@
   position: relative;
   overflow: hidden;
   break-after: page;
+  page-break-after: always;
   background: var(--bg);
   padding: 0.75in;
+  box-sizing: border-box;
 }
-.page:last-child { break-after: auto; }
+.page:last-child,
+.page:last-of-type {
+  break-after: auto;
+  page-break-after: auto;
+}
 
 .page.dark {
   background: var(--ink);

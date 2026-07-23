@@ -5,5 +5,16 @@
 }
 
 @media print {
-  body { background: none; padding: 0; }
+  html, body {
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
 }

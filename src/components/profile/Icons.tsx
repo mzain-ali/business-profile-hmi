@@ -4,7 +4,7 @@ export type IconName = "gear" | "bolt" | "shield" | "pin" | "badge" | "chev" | "
 
 export function IconSprite() {
   return (
-    <svg style={{ position: "absolute", width: 0, height: 0 }} aria-hidden="true">
+    <svg style={{ display: "none" }} aria-hidden="true">
       <defs>
         <symbol id="i-gear" viewBox="0 0 24 24">
           <path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" />
