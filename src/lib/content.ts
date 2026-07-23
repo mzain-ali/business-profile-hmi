@@ -199,13 +199,49 @@ export const locations = {
 export const faq = {
   eyebrow: "Questions",
   headline: "Before you get in touch",
+  sub: "Common questions about OEM vs aftermarket, pricing quotes, lead times, returns, and fleet maintenance.",
+  ctaBanner: {
+    title: "Need a part right now?",
+    sub: "Message us your machine model or part number on WhatsApp — we respond quickly with stock status and pricing.",
+    ctaLabel: "Chat on WhatsApp (+968 7733 0777)",
+  },
   items: [
-    { q: "Are these genuine (OEM) or aftermarket parts?", a: "Quality-checked aftermarket spare parts sourced from trusted manufacturers \u2014 fast availability and fair pricing without OEM lead times or markups." },
-    { q: "Is HMI Parts a registered supplier?", a: "Yes \u2014 JSRS registered, making us eligible for contractor, logistics and industrial procurement processes across Oman." },
-    { q: "How fast can I get a part?", a: "Local stock at Ghala or Salalah typically dispatches same day. Special-order items depend on supplier lead time \u2014 quoted upfront." },
-    { q: "Do you deliver, or do I collect?", a: "Both \u2014 collect from either branch, or ask about delivery coverage for your site when you enquire." },
-    { q: "Can you support an ongoing maintenance contract?", a: "Yes. Alongside parts supply we offer battery regeneration and on-site glass fitting, and can discuss AMC-style arrangements for fleets." },
-    { q: "Which brands do you stock parts for?", a: "30+ brands including JCB, Komatsu, Volvo, Caterpillar, Carraro, ZF, Toyota, Hyster, Yale, Doosan, John Deere and more." },
+    {
+      icon: "shield" as const,
+      accent: "orange" as const,
+      q: "Are these genuine (OEM) or aftermarket parts?",
+      a: "Quality-checked aftermarket spare parts sourced from trusted manufacturers — fast availability and fair pricing without OEM lead times or markups."
+    },
+    {
+      icon: "bolt" as const,
+      accent: "navy" as const,
+      q: "Can I get a quote before ordering?",
+      a: "Yes — send us your part number or machine details on WhatsApp and we'll confirm pricing and availability before you commit to an order."
+    },
+    {
+      icon: "clock" as const,
+      accent: "orange" as const,
+      q: "How fast can I get a part?",
+      a: "Local stock at Ghala or Salalah dispatches same day. Special-order items depend on supplier lead time — quoted upfront."
+    },
+    {
+      icon: "truck" as const,
+      accent: "navy" as const,
+      q: "Do you deliver, or do I collect?",
+      a: "Both — collect from either Muscat or Salalah branch, or ask about site delivery coverage when you enquire."
+    },
+    {
+      icon: "wrench" as const,
+      accent: "orange" as const,
+      q: "Can you support ongoing maintenance?",
+      a: "Yes. Alongside parts supply we offer battery regeneration and on-site glass fitting, plus AMC arrangements for equipment fleets."
+    },
+    {
+      icon: "tag" as const,
+      accent: "navy" as const,
+      q: "Do you accept returns or exchanges?",
+      a: "Yes, on unused parts in original condition within a reasonable window — get in touch and we'll sort it out quickly."
+    },
   ],
 };
 

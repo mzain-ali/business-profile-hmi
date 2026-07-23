@@ -1,7 +1,105 @@
-.headline { font-size: 25pt; font-weight: 600; margin-top: 10px; }
-.cols { margin-top: 0.38in; display: flex; gap: 0.5in; }
-.col { flex: 1; display: flex; flex-direction: column; gap: 0.26in; }
-.item { display: flex; gap: 12px; }
-.item > svg { flex-shrink: 0; margin-top: 3px; }
-.q { font-size: 11.5pt; font-weight: 600; }
-.a { margin-top: 5px; font-size: 9.8pt; color: var(--body); line-height: 1.5; }
+.bgWatermark {
+  position: absolute;
+  right: -0.5in;
+  bottom: -0.2in;
+  width: 5.5in;
+  height: 5.5in;
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+}
+
+.headline {
+  font-size: 25pt;
+  font-weight: 600;
+  margin-top: 6px;
+  letter-spacing: -0.01em;
+}
+
+.sub {
+  font-size: 10pt;
+  color: var(--body);
+  margin-top: 4px;
+}
+
+.cols {
+  margin-top: 0.28in;
+  display: flex;
+  gap: 0.35in;
+  position: relative;
+  z-index: 1;
+}
+
+.col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2in;
+}
+
+.itemCard {
+  display: flex;
+  gap: 14px;
+  background: var(--card-bg, #FFFFFF);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-top-width: 3px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.itemContent {
+  flex: 1;
+}
+
+.q {
+  font-size: 10.8pt;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.a {
+  margin-top: 5px;
+  font-size: 9.2pt;
+  color: var(--body);
+  line-height: 1.48;
+}
+
+/* Lower Half WhatsApp Quick-Contact Strip */
+.ctaStrip {
+  margin-top: 0.32in;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, var(--navy) 0%, #152A4A 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 14px rgba(11, 29, 58, 0.15);
+}
+
+.ctaText {
+  flex: 1;
+}
+
+.ctaTitle {
+  font-size: 13.5pt;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.ctaSub {
+  font-size: 9.2pt;
+  color: rgba(255, 255, 255, 0.82);
+  margin-top: 3px;
+  max-width: 4.8in;
+  line-height: 1.4;
+}
