@@ -1,20 +1,9 @@
 .grid {
   display: flex;
-  gap: 0.55in;
-  margin-top: 0.28in;
+  gap: 0.45in;
+  margin-top: 0.22in;
   position: relative;
   z-index: 1;
-}
-
-.bgWatermark {
-  position: absolute;
-  right: 0.1in;
-  bottom: 0.2in;
-  width: 4.6in;
-  opacity: 0.07;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
 }
 
 .leftCol {
@@ -27,105 +16,292 @@
 
 .headWrap h2 {
   font-size: 25pt;
-  font-weight: 600;
-  margin-top: 8px;
+  font-weight: 700;
+  margin-top: 4px;
   line-height: 1.18;
+  color: var(--ink);
 }
 
 .sub {
-  margin-top: 10px;
+  margin-top: 8px;
   color: var(--body);
   font-size: 11pt;
   line-height: 1.5;
 }
 
+.cardsGridWrapper {
+  position: relative;
+  margin-top: 0.24in;
+  width: 100%;
+}
+
+.networkSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
 .cardsGrid {
-  margin-top: 0.35in;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.22in;
+  grid-auto-rows: 1fr;
+  gap: 0.28in 0.24in;
+  position: relative;
+  z-index: 2;
 }
 
 .card {
-  background: #FFFFFF;
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--orange);
-  padding: 0.22in 0.2in;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 12px;
+  padding: 0.18in 0.18in 0.16in;
   display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  flex-direction: column;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+  position: relative;
+  overflow: visible;
 }
 
-.cardText {
-  flex: 1;
+.cardOrange {
+  border-top: 3px solid #d98812;
+}
+
+.cardNavy {
+  border-top: 3px solid #14669e;
+}
+
+.cardCircuitBg {
+  position: absolute;
+  bottom: -4px;
+  left: -4px;
+  width: 1.2in;
+  height: 1.2in;
+  opacity: 0.1;
+  color: #64748b;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cardCornerStripes {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 36px;
+  height: 18px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Base Card relative connector dots */
+.cardDot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.dotOrange {
+  background: #d98812;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 5px rgba(217, 136, 18, 0.8);
+}
+
+.dotNavy {
+  background: #14669e;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 5px rgba(20, 102, 158, 0.8);
+}
+
+/* Exact Card Border Touch Positions */
+.dotTop {
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dotBottom {
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dotLeft {
+  left: -3px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.dotRight {
+  right: -3px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Card-relative Vertical Line Connectors (Card 0/1 bottom dot -> Card 2/3 top dot) */
+.cardVertLineLeft,
+.cardVertLineRight {
+  position: absolute;
+  bottom: -0.28in;
+  left: 50%;
+  width: 1px;
+  height: 0.28in;
+  background: #cbd5e1;
+  transform: translateX(-50%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Card-relative Horizontal Branch Connectors (Card side dot -> central vertical line) */
+.cardHorizBranchLeft {
+  position: absolute;
+  right: -0.12in;
+  top: 50%;
+  width: 0.12in;
+  height: 1px;
+  background: #cbd5e1;
+  transform: translateY(-50%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.cardHorizBranchRight {
+  position: absolute;
+  left: -0.12in;
+  top: 50%;
+  width: 0.12in;
+  height: 1px;
+  background: #cbd5e1;
+  transform: translateY(-50%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Central Single Vertical Line (Running through the middle, extending to top & bottom horizontal branches) */
+.centralVertLine {
+  position: absolute;
+  left: 50%;
+  top: calc(25% - 0.07in);
+  bottom: calc(25% - 0.07in);
+  width: 1px;
+  background: #cbd5e1;
+  transform: translateX(-50%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* Central Horizontal Spine (Connecting left vertical connector line to right vertical connector line) */
+.centralHorizSpine {
+  position: absolute;
+  left: calc(25% - 0.06in);
+  right: calc(25% - 0.06in);
+  top: 50%;
+  height: 1px;
+  background: #cbd5e1;
+  transform: translateY(-50%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Central Diamond Junction Node */
+.centerDiamond {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border: 1.5px solid #475569;
+  transform: translate(-50%, -50%) rotate(45deg);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+  z-index: 6;
+  pointer-events: none;
+}
+
+.nodeDotBlue {
+  background: #14669e;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 5px rgba(20, 102, 158, 0.8), 0 0 2px rgba(56, 189, 248, 0.9);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.iconBox {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 0 100%);
+}
+
+.iconBoxOrange {
+  background: #fff7ed;
+  border: 1px solid rgba(217, 136, 18, 0.2);
+}
+
+.iconBoxNavy {
+  background: #f0f9ff;
+  border: 1px solid rgba(20, 102, 158, 0.2);
 }
 
 .card h3 {
-  font-size: 12.5pt;
-  font-weight: 600;
+  font-size: 11.5pt;
+  font-weight: 700;
   color: var(--ink);
   line-height: 1.25;
 }
 
 .card p {
-  margin-top: 6px;
-  font-size: 9.8pt;
-  color: var(--body);
+  margin-top: 8px;
+  font-size: 9.2pt;
+  color: #475569;
   line-height: 1.45;
+  position: relative;
+  z-index: 2;
 }
 
+/* Right Column & Audience Section */
 .rightCol {
-  flex: 0.85;
+  flex: 0.95;
   display: flex;
   flex-direction: column;
-}
-
-.photoWrapper {
-  width: 100%;
-  height: 3.4in;
-  border-radius: 2px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-
-.photoImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.photoCaption {
-  margin-top: 6px;
-  font-size: 8.5pt;
-  font-weight: 500;
-  color: var(--body);
-  letter-spacing: 0.02em;
-  text-align: right;
-  opacity: 0.8;
+  gap: 0.2in;
 }
 
 .audienceSection {
-  margin-top: 0.28in;
-  padding-top: 0.18in;
-  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .audienceTitle {
   font-size: 8.5pt;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: #1e3a8a;
   margin-bottom: 10px;
 }
 
 .audienceStrip {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
+  gap: 14px;
+  width: 100%;
 }
 
 .audienceItem {
@@ -137,19 +313,75 @@
   text-align: center;
 }
 
-.audienceIconBox {
-  width: 44px;
-  height: 44px;
+.audiencePillBox {
+  width: 100%;
+  height: 54px;
+  border-radius: 22px;
+  border: 1.5px solid rgba(203, 213, 225, 0.9);
+  background: #ffffff;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navy-soft);
-  clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 0 100%);
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.06);
+}
+
+.audienceImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .audienceLabel {
-  font-size: 8pt;
-  font-weight: 600;
+  font-size: 8.2pt;
+  font-weight: 700;
   color: var(--ink);
   white-space: nowrap;
+}
+
+/* Photo Container & Image Title Glass Overlay */
+.photoContainer {
+  width: 100%;
+  position: relative;
+}
+
+.photoWrapper {
+  width: 100%;
+  height: 3.4in;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1.5px solid rgba(20, 102, 158, 0.2);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.1);
+  position: relative;
+}
+
+.photoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imageOverlayCard {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  padding: 7px 22px;
+  color: #ffffff;
+  font-size: 9.8pt;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
 }

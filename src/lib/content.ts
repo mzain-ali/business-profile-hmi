@@ -63,13 +63,13 @@ export const whyUs = {
     { icon: "gear" as const, accent: "navy" as const, title: "Direct sourcing network", body: "Sourced directly from trusted global component manufacturers \u2014 ensuring fair pricing, warranty support, and long-term reliability." },
   ],
   photo: {
-    src: "/assets/interior-shelves.jpg",
+    src: "/assets/whyUs/parts-counter.jpg",
     caption: "Organized inventory & parts counter support",
   },
   audience: [
-    { id: "contractor", label: "Contractors" },
-    { id: "fleet", label: "Fleet Managers" },
-    { id: "workshop", label: "Workshop Owners" },
+    { id: "contractor", label: "Contractors", img: "/assets/whyUs/contractors.jpeg" },
+    { id: "fleet", label: "Fleet Managers", img: "/assets/whyUs/fleet-managers.jpeg" },
+    { id: "workshop", label: "Workshop Owners", img: "/assets/whyUs/workshop-owners.jpeg" },
   ],
 };
 
