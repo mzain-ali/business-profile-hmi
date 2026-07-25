@@ -50,14 +50,16 @@
   margin-top: 0.24in;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.12in 0.1in;
+  gap: 0.14in 0.11in;
   position: relative;
   z-index: 1;
 }
 
 .card {
-  background: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.95);
+  background: linear-gradient(165deg, #ffffff 0%, #f1f5f9 100%);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  border-top: 1.5px solid #ffffff;
+  border-left: 1.5px solid #ffffff;
   clip-path: polygon(14px 0, 100% 0, 100% 100%, 0 100%, 0 14px);
   height: 0.82in;
   display: flex;
@@ -69,13 +71,13 @@
 }
 
 .cardOrange {
-  border-bottom: 3.5px solid #d98812;
-  filter: drop-shadow(0 6px 12px rgba(217, 136, 18, 0.25)) drop-shadow(0 0 10px rgba(249, 115, 22, 0.18));
+  border-bottom: 4px solid #d98812;
+  filter: drop-shadow(2px 7px 10px rgba(15, 23, 42, 0.26)) drop-shadow(0 4px 12px rgba(217, 136, 18, 0.32));
 }
 
 .cardNavy {
-  border-bottom: 3.5px solid #14669e;
-  filter: drop-shadow(0 6px 12px rgba(20, 102, 158, 0.25)) drop-shadow(0 0 10px rgba(56, 189, 248, 0.22));
+  border-bottom: 4px solid #14669e;
+  filter: drop-shadow(2px 7px 10px rgba(15, 23, 42, 0.26)) drop-shadow(0 4px 12px rgba(20, 102, 158, 0.32));
 }
 
 .logoImg {
@@ -83,6 +85,7 @@
   max-height: 82%;
   object-fit: contain;
   mix-blend-mode: multiply;
+  filter: contrast(1.05);
 }
 
 .fallbackLabel {
