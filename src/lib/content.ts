@@ -192,11 +192,14 @@ export const brands = {
 // Swap in a real Salalah storefront photo when available.
 export const locations = {
   eyebrow: "Visit us",
-  headline: "Two branches, ready to help",
+  headline: {
+    plain: "Two Branches, ",
+    accent: "Ready to Help",
+  },
   branches: [
     {
       name: "Muscat Branch",
-      photo: "/assets/muscat-branch.jpg",
+      photo: "/assets/locations/muscat-branch.jpeg",
       pin: "Ghala, Muscat",
       address: "Al Amkeen Building, Shop #7, Way #5258, Building #1/4521, Ghala Saniya Street, Ghala Industrial Area, Muscat, Oman",
       phone: "+968 7733 0777",
@@ -206,7 +209,7 @@ export const locations = {
     },
     {
       name: "Salalah Branch",
-      photo: "/assets/interior-shelves.jpg",
+      photo: "/assets/locations/salalah.jpeg",
       pin: "Salalah Industrial Area",
       address: "Building #12/B, Shop #3, Al Sanaiya Street, Industrial Area, Salalah, Dhofar Governorate, Oman",
       phone: "+968 9701 8824",

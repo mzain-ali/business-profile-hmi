@@ -2,23 +2,34 @@
 import PageShell from "./PageShell";
 import { Icon } from "./Icons";
 import { locations } from "@/lib/content";
-import { HeavyIndustrialGearSVG } from "./SparePartsSVGs";
 import shapes from "./shapes.module.css";
 import styles from "./LocationsPage.module.css";
 
 export default function LocationsPage() {
   return (
-    <PageShell pageNumber={8}>
-      {/* Top right gear watermark matching visual system */}
-      <div className={styles.topRightWheel}>
-        <HeavyIndustrialGearSVG color="var(--navy)" />
+    <PageShell pageNumber={8} className={styles.locationsShell}>
+      {/* Background Visual Image */}
+      <div className={styles.bgImageWrapper}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/locations/locations-background.jpeg"
+          alt="Locations background visual"
+          className={styles.bgImage}
+        />
       </div>
 
-      <span className={shapes.eyebrow}>
-        <span className={shapes.diamond} />
-        {locations.eyebrow}
-      </span>
-      <h2 className={styles.headline}>{locations.headline}</h2>
+      <div className={styles.eyebrowRow}>
+        <div className={styles.eyebrowCard}>
+          <span className={shapes.eyebrow}>
+            <span className={shapes.diamond} />
+            {locations.eyebrow}
+          </span>
+        </div>
+      </div>
+      <h2 className={styles.headline}>
+        {locations.headline.plain}
+        <span className={styles.accent}>{locations.headline.accent}</span>
+      </h2>
 
       <div className={styles.row}>
         {locations.branches.map((b, i) => (
