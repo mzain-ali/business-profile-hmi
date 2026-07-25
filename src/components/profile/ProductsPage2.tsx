@@ -2,22 +2,30 @@
 import PageShell from "./PageShell";
 import { Icon } from "./Icons";
 import { productsPage2 } from "@/lib/content";
-import { HeavyIndustrialGearSVG } from "./SparePartsSVGs";
 import shapes from "./shapes.module.css";
 import styles from "./ProductsPage.module.css";
 
 export default function ProductsPage2() {
   return (
-    <PageShell pageNumber={6}>
-      {/* Top right gear watermark matching visual system */}
-      <div className={styles.topRightWheel}>
-        <HeavyIndustrialGearSVG color="var(--navy)" />
+    <PageShell pageNumber={6} className={styles.productsShell}>
+      {/* Background Visual Image */}
+      <div className={styles.bgImageWrapper}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/products/products-background.jpeg"
+          alt="Products background visual"
+          className={styles.bgImage}
+        />
       </div>
 
-      <span className={shapes.eyebrow}>
-        <span className={shapes.diamond} />
-        {productsPage2.eyebrow}
-      </span>
+      <div className={styles.eyebrowRow}>
+        <div className={styles.eyebrowCard}>
+          <span className={shapes.eyebrow}>
+            <span className={shapes.diamond} />
+            {productsPage2.eyebrow}
+          </span>
+        </div>
+      </div>
       <h2 className={styles.headline}>{productsPage2.headline}</h2>
       <p className={styles.sub}>{productsPage2.sub}</p>
 
