@@ -29,13 +29,29 @@ export default function ServicesPage() {
       <p className={styles.sub}>{services.sub}</p>
 
       <div className={styles.row}>
-        {services.items.map((s) => (
-          <div
-            className={`${styles.card} ${shapes.chamferLg}`}
-            key={s.title}
-            style={{ borderBottomColor: s.accent === "navy" ? "var(--navy)" : "var(--orange)" }}
-          >
-            <div className={`${styles.imageFrame} ${shapes.chamferLg}`}>
+        {services.items.map((s, i) => (
+          <div className={styles.card} key={s.title}>
+            <div className={styles.imageFrame}>
+              {i === 0 && (
+                <>
+                  <div className={styles.coreBadge}>CORE OFFERING</div>
+                  <div className={styles.shieldBadge}>
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </div>
+                </>
+              )}
               <img
                 src={s.img}
                 alt={s.title}
