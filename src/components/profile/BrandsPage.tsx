@@ -33,11 +33,13 @@ export default function BrandsPage() {
           const isOrange = i % 2 === 0;
           return (
             <div
-              className={`${styles.card} ${isOrange ? styles.cardOrange : styles.cardNavy}`}
+              className={`${styles.cardWrapper} ${isOrange ? styles.wrapperOrange : styles.wrapperNavy}`}
               key={b.name}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={b.logo} alt={b.name} className={styles.logoImg} />
+              <div className={styles.card}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={b.logo} alt={b.name} className={styles.logoImg} />
+              </div>
             </div>
           );
         })}

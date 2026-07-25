@@ -50,15 +50,27 @@
   margin-top: 0.22in;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.13in 0.12in;
+  gap: 0.14in 0.12in;
   position: relative;
   z-index: 1;
 }
 
+.cardWrapper {
+  position: relative;
+}
+
+.wrapperOrange {
+  filter: drop-shadow(-5px 8px 12px rgba(15, 23, 42, 0.22)) drop-shadow(0 4px 10px rgba(217, 136, 18, 0.3));
+}
+
+.wrapperNavy {
+  filter: drop-shadow(-5px 8px 12px rgba(15, 23, 42, 0.22)) drop-shadow(0 4px 10px rgba(20, 102, 158, 0.3));
+}
+
 .card {
-  background: #ffffff;
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
   border: 1px solid rgba(226, 232, 240, 0.95);
-  clip-path: polygon(14px 0, 100% 0, 100% 100%, 0 100%, 0 14px);
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
   height: 0.85in;
   display: flex;
   align-items: center;
@@ -68,21 +80,28 @@
   overflow: hidden;
 }
 
-.cardOrange {
-  border-bottom: 4px solid #d98812;
-  filter: drop-shadow(0 8px 14px rgba(15, 23, 42, 0.22)) drop-shadow(0 3px 10px rgba(217, 136, 18, 0.3));
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
 }
 
-.cardNavy {
-  border-bottom: 4px solid #14669e;
-  filter: drop-shadow(0 8px 14px rgba(15, 23, 42, 0.22)) drop-shadow(0 3px 10px rgba(20, 102, 158, 0.3));
+.wrapperOrange .card::after {
+  background: #d98812;
+}
+
+.wrapperNavy .card::after {
+  background: #14669e;
 }
 
 .logoImg {
   width: auto;
   height: auto;
-  max-width: 95%;
-  max-height: 88%;
+  max-width: 92%;
+  max-height: 85%;
   object-fit: contain;
   mix-blend-mode: multiply;
   display: block;
