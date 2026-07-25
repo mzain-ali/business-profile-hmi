@@ -1,22 +1,30 @@
 // BrandsPage.tsx — page 7. Content: lib/content.ts → brands
 import PageShell from "./PageShell";
 import { brands } from "@/lib/content";
-import { HeavyIndustrialGearSVG } from "./SparePartsSVGs";
 import shapes from "./shapes.module.css";
 import styles from "./BrandsPage.module.css";
 
 export default function BrandsPage() {
   return (
-    <PageShell pageNumber={7} showCornerMark={false}>
-      {/* Top right gear watermark matching visual system */}
-      <div className={styles.topRightWheel}>
-        <HeavyIndustrialGearSVG color="var(--navy)" />
+    <PageShell pageNumber={7} showCornerMark={false} className={styles.brandsShell}>
+      {/* Background Visual Image */}
+      <div className={styles.bgImageWrapper}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/brands/brands-background.jpeg"
+          alt="Brands background visual"
+          className={styles.bgImage}
+        />
       </div>
 
-      <span className={shapes.eyebrow}>
-        <span className={shapes.diamond} />
-        {brands.eyebrow}
-      </span>
+      <div className={styles.eyebrowRow}>
+        <div className={styles.eyebrowCard}>
+          <span className={shapes.eyebrow}>
+            <span className={shapes.diamond} />
+            {brands.eyebrow}
+          </span>
+        </div>
+      </div>
       <h2 className={styles.headline}>{brands.headline}</h2>
       <p className={styles.sub}>{brands.sub}</p>
 
