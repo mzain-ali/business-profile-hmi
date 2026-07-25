@@ -81,7 +81,11 @@ export const whyUs = {
 
 export const services = {
   eyebrow: "What we do",
-  headline: "Parts supply and uptime services, in one place",
+  headline: {
+    plain: "Parts Supply and ",
+    accent: "Uptime Services",
+    tail: ", in One Place",
+  },
   sub: "Our core business is spare parts supply — alongside that, we offer two services most parts-only suppliers don't.",
   items: [
     {

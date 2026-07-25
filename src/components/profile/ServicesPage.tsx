@@ -25,7 +25,11 @@ export default function ServicesPage() {
           </span>
         </div>
       </div>
-      <h2 className={styles.headline}>{services.headline}</h2>
+      <h2 className={styles.headline}>
+        {services.headline.plain}
+        <span className={styles.accent}>{services.headline.accent}</span>
+        {services.headline.tail}
+      </h2>
       <p className={styles.sub}>{services.sub}</p>
 
       <div className={styles.row}>
