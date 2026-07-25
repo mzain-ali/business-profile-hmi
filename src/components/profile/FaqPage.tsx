@@ -12,18 +12,30 @@ export default function FaqPage() {
   const col2 = faq.items.slice(half);
 
   return (
-    <PageShell pageNumber={9}>
-      {/* Background blueprint watermark */}
-      <div className={styles.bgWatermark}>
-        <BackgroundBlueprintSVG color="var(--navy)" strokeWidth={0.7} />
+    <PageShell pageNumber={9} className={styles.faqShell}>
+      {/* Background Visual Image */}
+      <div className={styles.bgImageWrapper}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/faqs/faqs-background.jpeg"
+          alt="FAQs background visual"
+          className={styles.bgImage}
+        />
       </div>
 
       <div className={styles.header}>
-        <span className={shapes.eyebrow}>
-          <span className={shapes.diamond} />
-          {faq.eyebrow}
-        </span>
-        <h2 className={styles.headline}>{faq.headline}</h2>
+        <div className={styles.eyebrowRow}>
+          <div className={styles.eyebrowCard}>
+            <span className={shapes.eyebrow}>
+              <span className={shapes.diamond} />
+              {faq.eyebrow}
+            </span>
+          </div>
+        </div>
+        <h2 className={styles.headline}>
+          {faq.headline.plain}
+          <span className={styles.accent}>{faq.headline.accent}</span>
+        </h2>
         {faq.sub && <p className={styles.sub}>{faq.sub}</p>}
       </div>
 

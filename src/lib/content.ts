@@ -222,7 +222,10 @@ export const locations = {
 
 export const faq = {
   eyebrow: "Questions",
-  headline: "Before you get in touch",
+  headline: {
+    plain: "Before You ",
+    accent: "Get in Touch",
+  },
   sub: "Common questions about OEM vs aftermarket, pricing quotes, lead times, returns, and fleet maintenance.",
   ctaBanner: {
     title: "Need a part right now?",

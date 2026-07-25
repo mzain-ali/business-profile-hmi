@@ -34,14 +34,13 @@ export default function LocationsPage() {
       <div className={styles.row}>
         {locations.branches.map((b, i) => (
           <div
-            className={`${styles.card} ${shapes.chamferLg}`}
+            className={`${styles.card} ${i % 2 === 0 ? styles.cardOrange : styles.cardNavy}`}
             key={b.name}
-            style={{ borderBottomColor: i % 2 === 0 ? "var(--orange)" : "var(--navy)" }}
           >
             <div className={styles.imgWrap}>
               <img src={b.photo} alt={b.name} className={styles.photo} />
               <span className={styles.pin}>
-                <Icon name="pin" size={11} color="#F5A623" />
+                <Icon name="pin" size={11} color="#FFFFFF" />
                 {b.pin}
               </span>
             </div>
