@@ -47,31 +47,40 @@
 .sub { margin-top: 8px; color: var(--body); font-size: 10.5pt; max-width: 8.5in; line-height: 1.4; position: relative; z-index: 1; }
 
 .grid {
-  margin-top: 0.28in;
+  margin-top: 0.24in;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.12in;
+  gap: 0.12in 0.1in;
   position: relative;
   z-index: 1;
 }
 
 .card {
-  background: #FFFFFF;
-  border: 1px solid var(--line);
-  border-bottom: 3px solid var(--orange);
-  height: 0.85in;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  clip-path: polygon(14px 0, 100% 0, 100% 100%, 0 100%, 0 14px);
+  height: 0.82in;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8px 12px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.cardOrange {
+  border-bottom: 3.5px solid #d98812;
+  filter: drop-shadow(0 6px 12px rgba(217, 136, 18, 0.25)) drop-shadow(0 0 10px rgba(249, 115, 22, 0.18));
+}
+
+.cardNavy {
+  border-bottom: 3.5px solid #14669e;
+  filter: drop-shadow(0 6px 12px rgba(20, 102, 158, 0.25)) drop-shadow(0 0 10px rgba(56, 189, 248, 0.22));
 }
 
 .logoImg {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: 82%;
   object-fit: contain;
   mix-blend-mode: multiply;
 }

@@ -29,15 +29,18 @@ export default function BrandsPage() {
       <p className={styles.sub}>{brands.sub}</p>
 
       <div className={styles.grid}>
-        {brands.items.map((b, i) => (
-          <div
-            className={`${styles.card} ${shapes.chamferSm}`}
-            key={b.name}
-            style={{ borderBottomColor: i % 2 === 0 ? "var(--orange)" : "var(--navy)" }}
-          >
-            <img src={b.logo} alt={b.name} className={styles.logoImg} />
-          </div>
-        ))}
+        {brands.items.map((b, i) => {
+          const isOrange = i % 2 === 0;
+          return (
+            <div
+              className={`${styles.card} ${isOrange ? styles.cardOrange : styles.cardNavy}`}
+              key={b.name}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={b.logo} alt={b.name} className={styles.logoImg} />
+            </div>
+          );
+        })}
       </div>
     </PageShell>
   );
