@@ -24,6 +24,7 @@
   display: block;
   transform: scale(1.12);
   transform-origin: center center;
+  opacity: 0.5;
 }
 
 .eyebrowRow {
