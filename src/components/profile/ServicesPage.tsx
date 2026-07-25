@@ -17,10 +17,14 @@ export default function ServicesPage() {
         />
       </div>
 
-      <span className={shapes.eyebrow}>
-        <span className={shapes.diamond} />
-        {services.eyebrow}
-      </span>
+      <div className={styles.eyebrowRow}>
+        <div className={styles.eyebrowCard}>
+          <span className={shapes.eyebrow}>
+            <span className={shapes.diamond} />
+            {services.eyebrow}
+          </span>
+        </div>
+      </div>
       <h2 className={styles.headline}>{services.headline}</h2>
       <p className={styles.sub}>{services.sub}</p>
 
