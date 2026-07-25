@@ -108,12 +108,19 @@
 /* 3. Footer Contact Information */
 .contactRow {
   display: flex;
-  gap: 34px;
+  gap: 24px;
   font-size: 10.5pt;
   color: var(--body);
   border-top: 1px solid var(--line);
   padding-top: 16px;
   margin-bottom: 0;
+  align-items: center;
+}
+
+.contactItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .contactRow strong {

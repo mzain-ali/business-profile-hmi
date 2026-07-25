@@ -17,27 +17,30 @@ export const cover = {
   headline: { plain: "Heavy Equipment", accentTail: "Spare Parts", accent: ", Ready Now." },
   sub: "Quality aftermarket spare parts for forklifts, excavators, wheel loaders, backhoes, telehandlers, cranes, tractors and road rollers — stocked across Muscat and Salalah, Oman.",
   badges: [
-    { icon: "gear" as const, label: "30+ Brands Stocked", accent: "navy" as const },
-    { icon: "pin" as const, label: "2 Branches — Muscat & Salalah", accent: "orange" as const },
+    { icon: "gear" as const, label: "10,000+ Parts in Stock", accent: "navy" as const },
+    { icon: "clock" as const, label: "Same-Day Response — Call or WhatsApp", accent: "orange" as const },
   ],
   contact: [
-    { label: "Web", value: "www.hmi-parts.com" },
-    { label: "Phone", value: "+968 7733 0777" },
-    { label: "Email", value: "hassan.mushtaq@hmi-parts.com" },
+    { icon: "globe" as const, label: "Web", value: "www.hmi-parts.com" },
+    { icon: "pin" as const, label: "Muscat Branch", value: "" },
+    { icon: "pin" as const, label: "Salalah Branch", value: "" },
   ],
 };
 
 export const about = {
   eyebrow: "Who we are",
-  headline: "Oman\u2019s aftermarket parts specialist for heavy machinery",
+  headline: {
+    plain: "Oman’s Aftermarket Parts Specialist for ",
+    accent: "Heavy Machinery",
+  },
   paragraphs: [
-    "HMI Parts supplies quality\u2011checked aftermarket spare parts for forklifts, excavators, wheel loaders, backhoes, telehandlers, cranes, tractors and road rollers \u2014 sourced from trusted manufacturers, not gray\u2011market stock.",
-    "We operate two branches, Muscat and Salalah, with live local inventory for same\u2011day parts availability.",
+    "HMI Parts supplies quality‑checked aftermarket spare parts for forklifts, excavators, wheel loaders, backhoes, telehandlers, cranes, tractors and road rollers — sourced from trusted manufacturers, not gray‑market stock.",
+    "We operate two branches, Muscat and Salalah, with live local inventory for same‑day parts availability.",
   ],
   photo: { src: "/assets/about/interior.jpg", caption: "Parts showroom — Muscat" },
   stats: [
     { num: "2", label: "Branches across Oman" },
-    { num: "30+", label: "Brands stocked" },
+    { num: "10,000+", label: "Parts in Stock" },
     { num: "8+", label: "Machine categories" },
   ],
   machineTypes: [

@@ -6,7 +6,7 @@ import shapes from "./shapes.module.css";
 import styles from "./AboutPage.module.css";
 
 export default function AboutPage() {
-  const statIcons = ["/icons/pin.svg", "/icons/tag.svg", "/icons/grid.svg"];
+  const statIcons = ["/icons/pin.svg", "/icons/gear.svg", "/icons/grid.svg"];
 
   return (
     <PageShell pageNumber={2} className={styles.aboutShell}>
@@ -33,7 +33,10 @@ export default function AboutPage() {
         <div className={styles.grid}>
           {/* Left Column: Headline, Paragraphs & Hexagonal Stats */}
           <div className={styles.copy}>
-            <h2>{about.headline}</h2>
+            <h2>
+              {about.headline.plain}
+              <span className={styles.accent}>{about.headline.accent}</span>
+            </h2>
             {about.paragraphs.map((p) => (
               <p className={styles.lead} key={p.slice(0, 20)}>
                 {p}

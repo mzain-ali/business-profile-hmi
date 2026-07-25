@@ -64,7 +64,14 @@ export default function CoverPage() {
         {/* 3. Footer Contact Information */}
         <div className={styles.contactRow}>
           {cover.contact.map((c) => (
-            <span key={c.label}>
+            <span key={c.label} className={styles.contactItem}>
+              {"icon" in c && c.icon && (
+                <Icon
+                  name={c.icon}
+                  size={13}
+                  color={c.icon === "pin" ? "#D98812" : "#14669E"}
+                />
+              )}
               <strong>{c.label}</strong> &nbsp;{c.value}
             </span>
           ))}

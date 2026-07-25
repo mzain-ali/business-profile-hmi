@@ -73,6 +73,11 @@
   max-width: 5.6in;
 }
 
+.accent {
+  color: var(--orange-deep);
+  font-weight: 800;
+}
+
 .lead {
   margin-top: 12px;
   font-size: 11pt;
@@ -115,10 +120,11 @@
 
 .num {
   font-family: var(--font-display);
-  font-size: 22pt;
+  font-size: 18pt;
   font-weight: 800;
   color: var(--ink);
   line-height: 1;
+  white-space: nowrap;
 }
 
 .lbl {
