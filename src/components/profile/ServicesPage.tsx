@@ -30,7 +30,10 @@ export default function ServicesPage() {
 
       <div className={styles.row}>
         {services.items.map((s) => (
-          <div className={styles.card} key={s.title}>
+          <div
+            className={`${styles.card} ${s.accent === "navy" ? styles.cardNavy : styles.cardOrange}`}
+            key={s.title}
+          >
             <div className={styles.imageFrame}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
