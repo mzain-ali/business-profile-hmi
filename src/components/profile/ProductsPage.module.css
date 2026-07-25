@@ -58,7 +58,7 @@
   flex: 1;
   background: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.95);
-  clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   height: 4.35in;
@@ -68,15 +68,15 @@
 
 .cardOrange {
   box-shadow:
-    0 12px 36px rgba(217, 136, 18, 0.16),
-    0 0 30px rgba(249, 115, 22, 0.14),
+    0 12px 36px rgba(217, 136, 18, 0.28),
+    0 0 30px rgba(249, 115, 22, 0.32),
     0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
 .cardNavy {
   box-shadow:
-    0 12px 36px rgba(20, 102, 158, 0.16),
-    0 0 30px rgba(56, 189, 248, 0.18),
+    0 12px 36px rgba(20, 102, 158, 0.28),
+    0 0 30px rgba(56, 189, 248, 0.35),
     0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
@@ -86,7 +86,7 @@
   position: relative;
   overflow: hidden;
   background: #f8fafc;
-  clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%);
+  border-radius: 16px 16px 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
