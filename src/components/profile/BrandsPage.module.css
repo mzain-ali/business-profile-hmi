@@ -47,45 +47,45 @@
 .sub { margin-top: 8px; color: var(--body); font-size: 10.5pt; max-width: 8.5in; line-height: 1.4; position: relative; z-index: 1; }
 
 .grid {
-  margin-top: 0.24in;
+  margin-top: 0.22in;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.14in 0.11in;
+  gap: 0.13in 0.12in;
   position: relative;
   z-index: 1;
 }
 
 .card {
-  background: linear-gradient(165deg, #ffffff 0%, #f1f5f9 100%);
-  border: 1px solid rgba(203, 213, 225, 0.8);
-  border-top: 1.5px solid #ffffff;
-  border-left: 1.5px solid #ffffff;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
   clip-path: polygon(14px 0, 100% 0, 100% 100%, 0 100%, 0 14px);
-  height: 0.82in;
+  height: 0.85in;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 12px;
+  padding: 4px 8px;
   position: relative;
   overflow: hidden;
 }
 
 .cardOrange {
   border-bottom: 4px solid #d98812;
-  filter: drop-shadow(2px 7px 10px rgba(15, 23, 42, 0.26)) drop-shadow(0 4px 12px rgba(217, 136, 18, 0.32));
+  filter: drop-shadow(0 8px 14px rgba(15, 23, 42, 0.22)) drop-shadow(0 3px 10px rgba(217, 136, 18, 0.3));
 }
 
 .cardNavy {
   border-bottom: 4px solid #14669e;
-  filter: drop-shadow(2px 7px 10px rgba(15, 23, 42, 0.26)) drop-shadow(0 4px 12px rgba(20, 102, 158, 0.32));
+  filter: drop-shadow(0 8px 14px rgba(15, 23, 42, 0.22)) drop-shadow(0 3px 10px rgba(20, 102, 158, 0.3));
 }
 
 .logoImg {
-  max-width: 90%;
-  max-height: 82%;
+  width: auto;
+  height: auto;
+  max-width: 95%;
+  max-height: 88%;
   object-fit: contain;
   mix-blend-mode: multiply;
-  filter: contrast(1.05);
+  display: block;
 }
 
 .fallbackLabel {
