@@ -1,3 +1,23 @@
+.eyebrowRow {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.eyebrowCard {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  position: relative;
+  z-index: 25;
+}
+
 .grid {
   display: flex;
   gap: 0.45in;

@@ -9,10 +9,14 @@ import styles from "./WhyUsPage.module.css";
 export default function WhyUsPage() {
   return (
     <PageShell pageNumber={3}>
-      <span className={shapes.eyebrow}>
-        <span className={shapes.diamond} />
-        {whyUs.eyebrow}
-      </span>
+      <div className={styles.eyebrowRow}>
+        <div className={styles.eyebrowCard}>
+          <span className={shapes.eyebrow}>
+            <span className={shapes.diamond} />
+            {whyUs.eyebrow}
+          </span>
+        </div>
+      </div>
 
       <div className={styles.grid}>
         {/* Left Column: Headings & 2x2 Cards Grid */}
