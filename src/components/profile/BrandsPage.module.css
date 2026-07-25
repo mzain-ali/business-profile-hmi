@@ -44,6 +44,12 @@
 }
 
 .headline { font-size: 25pt; font-weight: 600; margin-top: 8px; position: relative; z-index: 1; }
+
+.accent {
+  color: var(--orange-deep);
+  font-weight: 800;
+}
+
 .sub { margin-top: 8px; color: var(--body); font-size: 10.5pt; max-width: 8.5in; line-height: 1.4; position: relative; z-index: 1; }
 
 .grid {

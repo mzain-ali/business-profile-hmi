@@ -25,7 +25,10 @@ export default function BrandsPage() {
           </span>
         </div>
       </div>
-      <h2 className={styles.headline}>{brands.headline}</h2>
+      <h2 className={styles.headline}>
+        {brands.headline.plain}
+        <span className={styles.accent}>{brands.headline.accent}</span>
+      </h2>
       <p className={styles.sub}>{brands.sub}</p>
 
       <div className={styles.grid}>

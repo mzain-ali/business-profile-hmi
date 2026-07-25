@@ -26,7 +26,10 @@ export default function ProductsPage() {
           </span>
         </div>
       </div>
-      <h2 className={styles.headline}>{productsPage1.headline}</h2>
+      <h2 className={styles.headline}>
+        {productsPage1.headline.plain}
+        <span className={styles.accent}>{productsPage1.headline.accent}</span>
+      </h2>
       <p className={styles.sub}>{productsPage1.sub}</p>
 
       <div className={styles.row}>

@@ -114,7 +114,10 @@ export const services = {
 
 export const productsPage1 = {
   eyebrow: "Product categories",
-  headline: "Every category. One shop.",
+  headline: {
+    plain: "Every Category. ",
+    accent: "One Shop.",
+  },
   sub: "The machine categories we stock parts for — message us your part number directly on WhatsApp.",
   items: [
     { title: "Forklift Parts", img: "/assets/products/forklift-spare-parts-xray-image-min.png", body: "Hydraulic, mast & drivetrain components for Toyota, Mitsubishi, Hyster, Yale, Doosan, Heli." },
@@ -126,7 +129,10 @@ export const productsPage1 = {
 
 export const productsPage2 = {
   eyebrow: "Product categories",
-  headline: "Extended Machinery Lineup",
+  headline: {
+    accent: "Extended Machinery",
+    plain: " Lineup",
+  },
   sub: "Additional heavy equipment categories stocked across our Muscat and Salalah branches.",
   items: [
     { title: "Telehandler Parts", img: "/assets/products/telehandler.png", body: "Boom, hydraulic and drivetrain parts for Manitou and JCB telehandlers." },
@@ -138,7 +144,10 @@ export const productsPage2 = {
 
 export const brands = {
   eyebrow: "Brands we deal in",
-  headline: "30+ brands, one supplier",
+  headline: {
+    plain: "30+ Brands, ",
+    accent: "One Supplier",
+  },
   sub: "We are not affiliated with the brands below — names, logos and trademarks are the property of their respective companies.",
   items: [
     { name: "Dig & Lift", logo: "/assets/brands/dig-and-lift.jpeg" },
