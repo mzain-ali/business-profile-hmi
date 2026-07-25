@@ -1,16 +1,20 @@
 // ServicesPage.tsx — page 4. Content: lib/content.ts → services
 import PageShell from "./PageShell";
 import { services } from "@/lib/content";
-import { HeavyIndustrialGearSVG } from "./SparePartsSVGs";
 import shapes from "./shapes.module.css";
 import styles from "./ServicesPage.module.css";
 
 export default function ServicesPage() {
   return (
-    <PageShell pageNumber={4}>
-      {/* Heavy industrial mechanical gear icon in top right corner (half hidden, half shown) */}
-      <div className={styles.topRightWheel}>
-        <HeavyIndustrialGearSVG color="var(--navy)" />
+    <PageShell pageNumber={4} className={styles.servicesShell}>
+      {/* Background Visual Image */}
+      <div className={styles.bgImageWrapper}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/services/services-background.jpeg"
+          alt="Services background visual"
+          className={styles.bgImage}
+        />
       </div>
 
       <span className={shapes.eyebrow}>
