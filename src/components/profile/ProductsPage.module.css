@@ -68,12 +68,18 @@
 
 .cardOrange {
   border-bottom: 3.5px solid #d98812;
-  box-shadow: 0 12px 32px rgba(217, 136, 18, 0.22), 0 0 25px rgba(249, 115, 22, 0.28), 0 4px 12px rgba(15, 23, 42, 0.04);
+  box-shadow:
+    0 8px 30px rgba(217, 136, 18, 0.45),
+    0 0 40px rgba(249, 115, 22, 0.55),
+    0 0 15px rgba(251, 146, 60, 0.6);
 }
 
 .cardNavy {
   border-bottom: 3.5px solid #14669e;
-  box-shadow: 0 12px 32px rgba(20, 102, 158, 0.22), 0 0 25px rgba(56, 189, 248, 0.32), 0 4px 12px rgba(15, 23, 42, 0.04);
+  box-shadow:
+    0 8px 30px rgba(20, 102, 158, 0.45),
+    0 0 40px rgba(56, 189, 248, 0.6),
+    0 0 15px rgba(14, 165, 233, 0.65);
 }
 
 .imageFrame {
