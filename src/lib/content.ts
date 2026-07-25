@@ -57,7 +57,10 @@ export const about = {
 
 export const whyUs = {
   eyebrow: "Why HMI Parts",
-  headline: "Built for people who can\u2019t afford downtime",
+  headline: {
+    plain: "Built for People Who ",
+    accent: "Can’t Afford Downtime",
+  },
   sub: "Contractors, fleet managers and workshop owners choose HMI Parts for four reasons.",
   cards: [
     { icon: "pin" as const, accent: "orange" as const, title: "Two branches, live stock", body: "Ghala (Muscat) and Salalah both hold live inventory \u2014 not a single warehouse hours away. Most local parts move same day." },

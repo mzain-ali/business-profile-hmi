@@ -8,7 +8,17 @@ import styles from "./WhyUsPage.module.css";
 
 export default function WhyUsPage() {
   return (
-    <PageShell pageNumber={3}>
+    <PageShell pageNumber={3} className={styles.whyUsShell}>
+      {/* Background Visual Image */}
+      <div className={styles.bgImageWrapper}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/whyus/whyus-background.jpeg"
+          alt="Why Us background visual"
+          className={styles.bgImage}
+        />
+      </div>
+
       <div className={styles.eyebrowRow}>
         <div className={styles.eyebrowCard}>
           <span className={shapes.eyebrow}>
@@ -22,7 +32,10 @@ export default function WhyUsPage() {
         {/* Left Column: Headings & 2x2 Cards Grid */}
         <div className={styles.leftCol}>
           <div className={styles.headWrap}>
-            <h2>{whyUs.headline}</h2>
+            <h2>
+              {whyUs.headline.plain}
+              <span className={styles.accent}>{whyUs.headline.accent}</span>
+            </h2>
             <p className={styles.sub}>{whyUs.sub}</p>
           </div>
 
