@@ -12,7 +12,7 @@ export default function CoverPage() {
       <div className={styles.bgImageWrapper}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/cover/cover-background.jpeg"
+          src="/assets/cover/cover-background.jpg"
           alt="Cover background"
           className={styles.bgImage}
         />
@@ -23,7 +23,11 @@ export default function CoverPage() {
         {/* 1. Header Logo */}
         <div className={styles.logoRow}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/logo.png" alt={`${site.legalName} logo`} className={styles.logo} />
+          <img
+            src="/assets/logo.png"
+            alt={`${site.legalName} logo`}
+            className={styles.logo}
+          />
         </div>
 
         {/* 2. Main Title Block */}
@@ -53,8 +57,15 @@ export default function CoverPage() {
           {/* Key Badges */}
           <div className={styles.badgeRow}>
             {cover.badges.map((b) => (
-              <span key={b.label} className={`${shapes.badge} ${b.accent === "orange" ? shapes.badgeAlt : ""}`}>
-                <Icon name={b.icon} size={13} color={b.accent === "orange" ? "#D98812" : "#14669E"} />
+              <span
+                key={b.label}
+                className={`${shapes.badge} ${b.accent === "orange" ? shapes.badgeAlt : ""}`}
+              >
+                <Icon
+                  name={b.icon}
+                  size={13}
+                  color={b.accent === "orange" ? "#D98812" : "#14669E"}
+                />
                 {b.label}
               </span>
             ))}

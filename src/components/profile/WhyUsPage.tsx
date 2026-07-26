@@ -13,7 +13,7 @@ export default function WhyUsPage() {
       <div className={styles.bgImageWrapper}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/whyus/whyus-background.jpeg"
+          src="/assets/whyus/whyus-background.jpg"
           alt="Why Us background visual"
           className={styles.bgImage}
         />

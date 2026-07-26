@@ -6,12 +6,16 @@ import styles from "./BrandsPage.module.css";
 
 export default function BrandsPage() {
   return (
-    <PageShell pageNumber={7} showCornerMark={false} className={styles.brandsShell}>
+    <PageShell
+      pageNumber={7}
+      showCornerMark={false}
+      className={styles.brandsShell}
+    >
       {/* Background Visual Image */}
       <div className={styles.bgImageWrapper}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/brands/brands-background.jpeg"
+          src="/assets/brands/brands-background.jpg"
           alt="Brands background visual"
           className={styles.bgImage}
         />

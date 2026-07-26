@@ -11,7 +11,7 @@ export default function ServicesPage() {
       <div className={styles.bgImageWrapper}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/services/services-background.jpeg"
+          src="/assets/services/services-background.jpg"
           alt="Services background visual"
           className={styles.bgImage}
         />
@@ -40,11 +40,7 @@ export default function ServicesPage() {
           >
             <div className={styles.imageFrame}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={s.img}
-                alt={s.title}
-                className={styles.cardPhoto}
-              />
+              <img src={s.img} alt={s.title} className={styles.cardPhoto} />
             </div>
             <div className={styles.cardContent}>
               <h3>{s.title}</h3>
@@ -56,4 +52,3 @@ export default function ServicesPage() {
     </PageShell>
   );
 }
-

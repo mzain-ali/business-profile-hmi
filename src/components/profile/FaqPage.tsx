@@ -17,7 +17,7 @@ export default function FaqPage() {
       <div className={styles.bgImageWrapper}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/faqs/faqs-background.jpeg"
+          src="/assets/faqs/faqs-background.jpg"
           alt="FAQs background visual"
           className={styles.bgImage}
         />

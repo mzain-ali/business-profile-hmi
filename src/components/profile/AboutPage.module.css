@@ -114,17 +114,23 @@
 .icon {
   width: 20px;
   height: 20px;
-  margin: 0 auto 2px;
+  margin: 0 auto 3px;
   display: block;
+  color: var(--orange-deep);
+  fill: var(--orange-deep);
 }
 
 .num {
   font-family: var(--font-display);
-  font-size: 18pt;
+  font-size: 17pt;
   font-weight: 800;
-  color: var(--ink);
-  line-height: 1;
+  color: var(--orange-deep);
+  line-height: 1.1;
   white-space: nowrap;
+}
+
+.numSmall {
+  font-size: 13.5pt;
 }
 
 .lbl {

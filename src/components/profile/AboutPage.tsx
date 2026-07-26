@@ -6,7 +6,7 @@ import shapes from "./shapes.module.css";
 import styles from "./AboutPage.module.css";
 
 export default function AboutPage() {
-  const statIcons = ["/icons/pin.svg", "/icons/gear.svg", "/icons/grid.svg"];
+  const statIcons = ["/icons/clock.svg", "/icons/gear.svg", "/icons/grid.svg"];
 
   return (
     <PageShell pageNumber={2} className={styles.aboutShell}>
@@ -14,7 +14,7 @@ export default function AboutPage() {
       <div className={styles.bgImageWrapper}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/about/about-background.jpeg"
+          src="/assets/about/about-background.jpg"
           alt="About page background visual"
           className={styles.bgImage}
         />
@@ -49,7 +49,9 @@ export default function AboutPage() {
                 <div className={styles.statHex} key={s.label}>
                   <div className={styles.statInner}>
                     <img src={statIcons[i]} alt="" className={styles.icon} />
-                    <div className={styles.num}>{s.num}</div>
+                    <div className={`${styles.num} ${s.num.length > 5 ? styles.numSmall : ""}`}>
+                      {s.num}
+                    </div>
                     <div className={styles.lbl}>{s.label}</div>
                   </div>
                 </div>

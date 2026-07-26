@@ -12,7 +12,7 @@ export default function LocationsPage() {
       <div className={styles.bgImageWrapper}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/locations/locations-background.jpeg"
+          src="/assets/locations/locations-background.jpg"
           alt="Locations background visual"
           className={styles.bgImage}
         />
@@ -48,9 +48,17 @@ export default function LocationsPage() {
               <h3>{b.name}</h3>
               <p className={styles.addr}>{b.address}</p>
               <div className={styles.meta}>
-                <div><b>Phone:</b> &nbsp;{b.phone}</div>
-                <div><b>Email:</b> &nbsp;{b.email}</div>
-                {b.hours && <div><b>Hours:</b> &nbsp;{b.hours}</div>}
+                <div>
+                  <b>Phone:</b> &nbsp;{b.phone}
+                </div>
+                <div>
+                  <b>Email:</b> &nbsp;{b.email}
+                </div>
+                {b.hours && (
+                  <div>
+                    <b>Hours:</b> &nbsp;{b.hours}
+                  </div>
+                )}
               </div>
               <div className={styles.actionRow}>
                 {b.mapUrl && (

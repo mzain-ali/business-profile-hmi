@@ -12,7 +12,7 @@ export default function ProductsPage() {
       <div className={styles.bgImageWrapper}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/products/products-background.jpeg"
+          src="/assets/products/products-background.jpg"
           alt="Products background visual"
           className={styles.bgImage}
         />
@@ -52,7 +52,12 @@ export default function ProductsPage() {
                     strokeWidth="2.2"
                   >
                     <circle cx="12" cy="12" r="9" />
-                    <circle cx="12" cy="12" r="3" fill={isOrange ? "#d98812" : "#14669e"} />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="3"
+                      fill={isOrange ? "#d98812" : "#14669e"}
+                    />
                   </svg>
                 </div>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -60,7 +65,11 @@ export default function ProductsPage() {
               </div>
               <div className={styles.cardContent}>
                 <h3>
-                  <span className={isOrange ? styles.numOrange : styles.numNavy}>{numStr}</span>
+                  <span
+                    className={isOrange ? styles.numOrange : styles.numNavy}
+                  >
+                    {numStr}
+                  </span>
                   {p.title}
                 </h3>
                 <p>{p.body}</p>
