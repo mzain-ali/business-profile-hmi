@@ -276,6 +276,10 @@ export const contact = {
   eyebrow: "Get in touch",
   headline: "Need a part today?",
   sub: "Message us your machine and part details — Muscat or Salalah, we’ll confirm stock and price fast.",
+  highlights: [
+    { title: "Same-Day", label: "Dispatch" },
+    { title: "Nationwide", label: "Delivery" },
+  ],
   qrCard: {
     title: "Scan to Chat on WhatsApp",
     sub: "+968 7733 0777 · Instant Parts Enquiry",
@@ -287,7 +291,7 @@ export const contact = {
     { icon: "globe" as const, accent: "navy" as const, label: "Website", value: "www.hmi-parts.com" },
   ],
   ctaLabel: "Chat on WhatsApp (+968 7733 0777)",
-  footer: "Hassan Mushtaq International SPC · Two branches. Same-day stock. 30+ brands.",
+  footer: "Hassan Mushtaq International SPC · Nationwide delivery. Same-day dispatch.",
 };
 
 // Master page order — the print route (app/print/page.tsx) maps over this.

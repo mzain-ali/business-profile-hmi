@@ -16,32 +16,52 @@ export default function ContactPage() {
         <BackgroundBlueprintSVG color="#FFFFFF" strokeWidth={0.7} />
       </div>
 
-      <div className={styles.top}>
-        <span className={shapes.eyebrow} style={{ color: "var(--orange)" }}>
-          <span className={shapes.diamond} style={{ background: "#F5A623" }} />
-          {contact.eyebrow}
-        </span>
-        <h2 className={styles.headline}>{contact.headline}</h2>
-        <p className={styles.sub}>{contact.sub}</p>
-      </div>
+      {/* Main 2-Column Section */}
+      <div className={styles.mainLayout}>
+        {/* Left Content Column */}
+        <div className={styles.leftCol}>
+          <span className={shapes.eyebrow} style={{ color: "var(--orange)" }}>
+            <span className={shapes.diamond} style={{ background: "#F5A623" }} />
+            {contact.eyebrow}
+          </span>
+          <h2 className={styles.headline}>{contact.headline}</h2>
+          <p className={styles.sub}>{contact.sub}</p>
 
-      {/* Center Visual: WhatsApp QR Code Card framing the dead middle space */}
-      <div className={styles.centerVisual}>
-        <div className={`${styles.qrCard} ${shapes.chamferLg}`}>
-          <div className={styles.qrBox}>
+          <div className={styles.divider} />
+
+          {/* Highlights Row */}
+          <div className={styles.highlightsRow}>
+            {contact.highlights.map((h, i) => (
+              <div key={i} className={styles.highlightItem}>
+                <div className={styles.highlightTitle}>{h.title}</div>
+                <div className={styles.highlightLabel}>{h.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.divider} />
+
+          {/* WhatsApp Scan Box */}
+          <div className={`${styles.qrCard} ${shapes.chamferLg}`}>
+            <div className={styles.qrInfo}>
+              <div className={styles.qrTitle}>{contact.qrCard.title}</div>
+              <div className={styles.qrSub}>{contact.qrCard.sub}</div>
+              <p className={styles.qrDesc}>
+                Scan with your smartphone camera to launch WhatsApp and send your part numbers directly to our counter team.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Visual Column: Mobile Smartphone Mockup */}
+        <div className={styles.rightCol}>
+          <div className={styles.mockupWrapper}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/qr-code.png"
-              alt="WhatsApp QR Code (+968 7733 0777)"
-              className={styles.qrImg}
+              src="/assets/qr-whatsapp-mockup.png"
+              alt="WhatsApp Mobile Mockup QR Code"
+              className={styles.mockupImg}
             />
-          </div>
-          <div className={styles.qrInfo}>
-            <div className={styles.qrTitle}>{contact.qrCard.title}</div>
-            <div className={styles.qrSub}>{contact.qrCard.sub}</div>
-            <p className={styles.qrDesc}>
-              Scan with your smartphone camera to launch WhatsApp and send your part numbers directly to our counter team.
-            </p>
           </div>
         </div>
       </div>
@@ -64,11 +84,11 @@ export default function ContactPage() {
                 >
                   <Icon
                     name={c.icon}
-                    size={14}
+                    size={13}
                     color={c.accent === "navy" ? "#FFFFFF" : "var(--orange)"}
                   />
                 </div>
-                <div className={styles.lbl}>{c.label}</div>
+                <div className={styles.lbl}>{c.label} —</div>
               </div>
               <div className={styles.val}>{c.value}</div>
             </div>
@@ -77,7 +97,7 @@ export default function ContactPage() {
 
         <div className={styles.ctaArea}>
           <div className={styles.heroBtn}>
-            <Icon name="bolt" size={16} color="#1A1A1A" />
+            <Icon name="bolt" size={15} color="#1A1A1A" />
             {contact.ctaLabel}
           </div>
           <span className={styles.footerLine}>{contact.footer}</span>
