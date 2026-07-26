@@ -80,16 +80,12 @@
 
 .cardOrange {
   border-bottom: 4px solid var(--orange);
-  box-shadow:
-    0 8px 22px rgba(217, 136, 18, 0.08),
-    0 2px 8px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
 }
 
 .cardNavy {
   border-bottom: 4px solid var(--navy);
-  box-shadow:
-    0 8px 22px rgba(20, 102, 158, 0.09),
-    0 2px 8px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
 }
 
 .imgWrap {

@@ -103,7 +103,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
 }
 
 .statInner {
@@ -148,7 +148,7 @@
   height: 4.1in;
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
   position: relative;
 }
 
@@ -190,7 +190,7 @@
   justify-content: center;
   padding: 6px;
   box-sizing: border-box;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .machineTexture {

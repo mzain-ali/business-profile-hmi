@@ -63,7 +63,7 @@
 .card {
   flex: 1;
   background: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(226, 232, 240, 0.9);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -73,17 +73,13 @@
 }
 
 .cardOrange {
-  box-shadow:
-    0 12px 36px rgba(217, 136, 18, 0.16),
-    0 0 30px rgba(249, 115, 22, 0.14),
-    0 2px 8px rgba(15, 23, 42, 0.04);
+  border-bottom: 3px solid var(--orange);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
 }
 
 .cardNavy {
-  box-shadow:
-    0 12px 36px rgba(20, 102, 158, 0.16),
-    0 0 30px rgba(56, 189, 248, 0.18),
-    0 2px 8px rgba(15, 23, 42, 0.04);
+  border-bottom: 3px solid var(--navy);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
 }
 
 .imageFrame {

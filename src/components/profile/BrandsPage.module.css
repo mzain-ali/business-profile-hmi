@@ -65,12 +65,9 @@
   position: relative;
 }
 
-.wrapperOrange {
-  filter: drop-shadow(-5px 8px 12px rgba(15, 23, 42, 0.22)) drop-shadow(0 4px 10px rgba(217, 136, 18, 0.3));
-}
-
+.wrapperOrange,
 .wrapperNavy {
-  filter: drop-shadow(-5px 8px 12px rgba(15, 23, 42, 0.22)) drop-shadow(0 4px 10px rgba(20, 102, 158, 0.3));
+  filter: drop-shadow(0 2px 5px rgba(15, 23, 42, 0.08));
 }
 
 .card {

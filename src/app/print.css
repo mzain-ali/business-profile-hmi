@@ -17,4 +17,10 @@
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
+
+  /* PDF-safe minimal card shadows for mobile & desktop PDF viewers */
+  [class*="card"], [class*="Card"], [class*="box"], [class*="Box"] {
+    -webkit-filter: none !important;
+    filter: none !important;
+  }
 }

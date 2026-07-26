@@ -67,18 +67,18 @@
   align-items: center;
   gap: 24px;
   padding: 20px 28px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-left: 4px solid var(--orange);
   backdrop-filter: blur(8px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .qrBox {
   padding: 6px;
   background: #FFFFFF;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
 }
 
@@ -200,7 +200,7 @@
   font-size: 11pt;
   clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
   letter-spacing: 0.01em;
-  box-shadow: 0 4px 15px rgba(217, 136, 18, 0.3);
+  box-shadow: 0 2px 8px rgba(217, 136, 18, 0.15);
 }
 
 .footerLine {
